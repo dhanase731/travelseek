@@ -1,0 +1,1749 @@
+{
+  "info": {
+    "_postman_id": "0f5a7c2e-9b1d-4e3a-8c6f-2d4b6a8e0c11",
+    "name": "Wild Atlas — API v1",
+    "description": "Contract tests for Wild Atlas. Run folders in order 00 → 09. Every read asserts that no site coordinates leak. Import the local environment, start the app, seed the database, then Run collection.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "00 · Health",
+      "item": [
+        {
+          "name": "01 · Health",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"db is up\", () => pm.expect(pm.response.json().db).to.eql(\"up\"));",
+                  "pm.test(\"no site coordinates leaked\", () => {",
+                  "  pm.expect(pm.response.text()).to.not.include('\"location\"');",
+                  "  pm.expect(pm.response.text()).to.not.include(\"publish_site_coordinates\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "health"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "01 · Read",
+      "item": [
+        {
+          "name": "02 · Taxonomy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test(\"7 facets\", () => pm.expect(b.facets.length).to.eql(7));",
+                  "pm.test(\"5 access statuses\", () => pm.expect(b.accessStatuses.length).to.eql(5));",
+                  "pm.test(\"no site coordinates leaked\", () => {",
+                  "  pm.expect(pm.response.text()).to.not.include('\"location\"');",
+                  "  pm.expect(pm.response.text()).to.not.include(\"publish_site_coordinates\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/taxonomy?lang={{lang}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "taxonomy"
+              ],
+              "query": [
+                {
+                  "key": "lang",
+                  "value": "{{lang}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "03 · Towns",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test(\"has towns\", () => pm.expect(b.count).to.be.above(0));",
+                  "pm.test(\"town has no location\", () => pm.expect(b.towns[0]).to.not.have.property(\"location\"));",
+                  "pm.test(\"no site coordinates leaked\", () => {",
+                  "  pm.expect(pm.response.text()).to.not.include('\"location\"');",
+                  "  pm.expect(pm.response.text()).to.not.include(\"publish_site_coordinates\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/towns?eligible=true&lang={{lang}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "towns"
+              ],
+              "query": [
+                {
+                  "key": "eligible",
+                  "value": "true"
+                },
+                {
+                  "key": "lang",
+                  "value": "{{lang}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "04 · Places",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test(\"places is an array\", () => pm.expect(b.places).to.be.an(\"array\"));",
+                  "pm.test(\"each card has an access point\", () => {",
+                  "  b.places.forEach((p) => pm.expect(p.accessPoint).to.be.an(\"object\"));",
+                  "});",
+                  "pm.test(\"no site coordinates leaked\", () => {",
+                  "  pm.expect(pm.response.text()).to.not.include('\"location\"');",
+                  "  pm.expect(pm.response.text()).to.not.include(\"publish_site_coordinates\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/places?limit=200&lang={{lang}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "places"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "200"
+                },
+                {
+                  "key": "lang",
+                  "value": "{{lang}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "05 · Place detail",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "const p = pm.response.json().place;",
+                  "pm.test(\"at least two sources\", () => pm.expect(p.sources.length).to.be.at.least(2));",
+                  "pm.test(\"access point present\", () => pm.expect(p.accessPoint).to.be.an(\"object\"));",
+                  "pm.test(\"no narrative score on non-secular\", () => {",
+                  "  if (p.culturalStatus !== \"SECULAR\") pm.expect(p.narrativeScore).to.be.null;",
+                  "});",
+                  "pm.test(\"no site coordinates leaked\", () => {",
+                  "  pm.expect(pm.response.text()).to.not.include('\"location\"');",
+                  "  pm.expect(pm.response.text()).to.not.include(\"publish_site_coordinates\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/places/{{slug}}?lang={{lang}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "places",
+                "{{slug}}"
+              ],
+              "query": [
+                {
+                  "key": "lang",
+                  "value": "{{lang}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "02 · Search",
+      "item": [
+        {
+          "name": "06 · Search (Tamil)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test(\"Siruvani ranks first\", () => pm.expect(b.places[0].slug).to.eql(\"siruvani-falls\"));",
+                  "pm.test(\"intent present\", () => pm.expect(b.intent).to.be.an(\"object\"));",
+                  "pm.test(\"no site coordinates leaked\", () => {",
+                  "  pm.expect(pm.response.text()).to.not.include('\"location\"');",
+                  "  pm.expect(pm.response.text()).to.not.include(\"publish_site_coordinates\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/search?q=சிறுவாணி&lang=ta",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "சிறுவாணி"
+                },
+                {
+                  "key": "lang",
+                  "value": "ta"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "06b · Search (intent)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test(\"WATER facet detected\", () => pm.expect(b.intent.facets).to.include(\"WATER\"));",
+                  "pm.test(\"town hint detected\", () => pm.expect(b.intent.townHint).to.eql(\"valparai\"));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/search?q=waterfalls near Valparai&lang=en",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "waterfalls near Valparai"
+                },
+                {
+                  "key": "lang",
+                  "value": "en"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07 · Suggest",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test(\"max 8 suggestions\", () => pm.expect(b.suggestions.length).to.be.at.most(8));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/search/suggest?q=sir&lang={{lang}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "search",
+                "suggest"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "sir"
+                },
+                {
+                  "key": "lang",
+                  "value": "{{lang}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "08 · Nearby",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test(\"in region\", () => pm.expect(b.inRegion).to.eql(true));",
+                  "pm.test(\"crow-flies distance only\", () => {",
+                  "  b.places.forEach((p) => {",
+                  "    if (p.distance) pm.expect(p.distance.kind).to.eql(\"CROW\");",
+                  "  });",
+                  "});",
+                  "pm.test(\"no site coordinates leaked\", () => {",
+                  "  pm.expect(pm.response.text()).to.not.include('\"location\"');",
+                  "  pm.expect(pm.response.text()).to.not.include(\"publish_site_coordinates\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/nearby",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "nearby"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lat\": 10.9481,\n  \"lon\": 76.7012,\n  \"radiusM\": 15000,\n  \"facets\": [],\n  \"lang\": \"en\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "03 · Geo",
+      "item": [
+        {
+          "name": "09 · Reach",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test(\"town echoed\", () => pm.expect(b.town.slug).to.eql(pm.environment.get(\"town\")));",
+                  "pm.test(\"hull label\", () => pm.expect(b.hullLabel).to.eql(\"approximate reach\"));",
+                  "pm.test(\"hull null under 3 points\", () => {",
+                  "  if (b.count < 3) pm.expect(b.hull).to.be.null;",
+                  "});",
+                  "pm.test(\"no site coordinates leaked\", () => {",
+                  "  pm.expect(pm.response.text()).to.not.include('\"location\"');",
+                  "  pm.expect(pm.response.text()).to.not.include(\"publish_site_coordinates\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/reach?town={{town}}&within=60&lang={{lang}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "reach"
+              ],
+              "query": [
+                {
+                  "key": "town",
+                  "value": "{{town}}"
+                },
+                {
+                  "key": "within",
+                  "value": "60"
+                },
+                {
+                  "key": "lang",
+                  "value": "{{lang}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "08b · Nearby outside region",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Chennai is outside the region\", () => pm.expect(pm.response.json().inRegion).to.eql(false));",
+                  "pm.test(\"no places returned\", () => pm.expect(pm.response.json().count).to.eql(0));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/nearby",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "nearby"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lat\": 13.0827,\n  \"lon\": 80.2707,\n  \"radiusM\": 15000,\n  \"lang\": \"en\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "04 · Write",
+      "item": [
+        {
+          "name": "10 · Correction",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 201\", () => pm.response.to.have.status(201));",
+                  "const b = pm.response.json();",
+                  "pm.test(\"status OPEN\", () => pm.expect(b.status).to.eql(\"OPEN\"));",
+                  "pm.test(\"localized message\", () => pm.expect(b.message).to.have.property(\"ta\"));",
+                  "pm.test(\"no site coordinates leaked\", () => {",
+                  "  pm.expect(pm.response.text()).to.not.include('\"location\"');",
+                  "  pm.expect(pm.response.text()).to.not.include(\"publish_site_coordinates\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/corrections",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "corrections"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"placeSlug\": \"{{slug}}\",\n  \"field\": \"accessWindow\",\n  \"message\": \"Gate was closed at 16:30 on 24 Nov 2026. The sign says 17:00.\",\n  \"channel\": \"WEB\",\n  \"website\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "05 · Telegram",
+      "item": [
+        {
+          "name": "11 · Create link",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 201\", () => pm.response.to.have.status(201));",
+                  "const b = pm.response.json();",
+                  "pm.environment.set(\"linkToken\", b.token);",
+                  "pm.environment.set(\"linkCode\", b.code);",
+                  "pm.test(\"4-char unambiguous code\", () => pm.expect(b.code).to.match(/^[ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{4}$/));",
+                  "pm.test(\"token is not in the deep link twice\", () => pm.expect(b.deepLink).to.include(b.token));",
+                  "pm.test(\"5 minute expiry\", () => pm.expect(b.expiresIn).to.eql(300));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/telegram/link",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "telegram",
+                "link"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "11b · Webhook /start (bind attempt)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"plain ok\", () => pm.expect(pm.response.text()).to.eql(\"ok\"));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Telegram-Bot-Api-Secret-Token",
+                "value": "{{webhookSecret}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/telegram/webhook",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "telegram",
+                "webhook"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"update_id\": 900000001,\n  \"message\": {\n    \"message_id\": 42,\n    \"date\": 1795766400,\n    \"chat\": {\n      \"id\": 123456789,\n      \"type\": \"private\"\n    },\n    \"from\": {\n      \"id\": 123456789,\n      \"is_bot\": false,\n      \"first_name\": \"Test\"\n    },\n    \"text\": \"/start {{linkToken}}\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "12 · Link status",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test(\"status is PENDING\", () => pm.expect(b.status).to.eql(\"PENDING\"));",
+                  "pm.test(\"chat id never returned\", () => pm.expect(b).to.not.have.property(\"chat_id\"));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/telegram/link/status",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "telegram",
+                "link",
+                "status"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"token\": \"{{linkToken}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "13 · Unlink",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"notifications disabled\", () => pm.expect(pm.response.json().notificationsEnabled).to.eql(false));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/telegram/unlink",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "telegram",
+                "unlink"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "06 · Preferences",
+      "item": [
+        {
+          "name": "14 · Get preferences",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test(\"valid radius\", () => pm.expect([5000,10000,15000,25000]).to.include(b.radiusM));",
+                  "pm.test(\"no chat id\", () => pm.expect(b.telegram).to.not.have.property(\"chat_id\"));",
+                  "pm.test(\"no home geohash\", () => pm.expect(b).to.not.have.property(\"home_geohash5\"));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/preferences",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "preferences"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "15 · Patch preferences",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test(\"radius updated\", () => pm.expect(b.radiusM).to.eql(15000));",
+                  "pm.test(\"quiet hours updated\", () => pm.expect(b.quietStart).to.eql(\"21:30\"));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/preferences",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "preferences"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"radiusM\": 15000,\n  \"quietStart\": \"21:30\",\n  \"quietEnd\": \"06:30\",\n  \"facets\": [\n    \"WATER\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "07 · Trips & Pack",
+      "item": [
+        {
+          "name": "16 · Create trip",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"created or idempotent\", () => pm.expect([200,201]).to.include(pm.response.code));",
+                  "const b = pm.response.json();",
+                  "pm.environment.set(\"tripId\", b.tripId);",
+                  "pm.test(\"home radius bypassed\", () => pm.expect(b.homeRadiusBypassed).to.eql(true));",
+                  "pm.test(\"pack has places\", () => pm.expect(b.pack.places).to.be.above(0));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/trips",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "trips"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"corridor\": \"{{corridor}}\",\n  \"startsAt\": \"2026-12-05T04:30:00.000Z\",\n  \"endsAt\": \"2026-12-06T14:00:00.000Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "16b · Create trip again (idempotent)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"same trip id\", () => pm.expect(pm.response.json().tripId).to.eql(pm.environment.get(\"tripId\")));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/trips",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "trips"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"corridor\": \"{{corridor}}\",\n  \"startsAt\": \"2026-12-05T04:30:00.000Z\",\n  \"endsAt\": \"2026-12-06T14:00:00.000Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "17 · Get trip",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test(\"stops ordered\", () => {",
+                  "  const orders = b.stops.map((s) => s.order);",
+                  "  pm.expect(orders).to.eql([...orders].sort((a, c) => a - c));",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/trips/{{tripId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "trips",
+                "{{tripId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "18 · Pack manifest",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test(\"dossiers match places\", () => pm.expect(b.dossiers.length).to.eql(b.places.length));",
+                  "pm.test(\"tiles max zoom 14\", () => pm.expect(b.tiles.maxZoom).to.eql(14));",
+                  "pm.test(\"no site coordinates leaked\", () => {",
+                  "  pm.expect(pm.response.text()).to.not.include('\"location\"');",
+                  "  pm.expect(pm.response.text()).to.not.include(\"publish_site_coordinates\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/trip/{{corridor}}/pack",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "trip",
+                "{{corridor}}",
+                "pack"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "19 · Delete trip",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"deleted\", () => pm.expect(pm.response.json().deleted).to.eql(true));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/trips/{{tripId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "trips",
+                "{{tripId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "08 · Internal",
+      "item": [
+        {
+          "name": "20 · Webhook replay",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"plain ok\", () => pm.expect(pm.response.text()).to.eql(\"ok\"));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Telegram-Bot-Api-Secret-Token",
+                "value": "{{webhookSecret}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/telegram/webhook",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "telegram",
+                "webhook"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"update_id\": 900000001,\n  \"message\": {\n    \"message_id\": 42,\n    \"date\": 1795766400,\n    \"chat\": {\n      \"id\": 123456789,\n      \"type\": \"private\"\n    },\n    \"from\": {\n      \"id\": 123456789,\n      \"is_bot\": false,\n      \"first_name\": \"Test\"\n    },\n    \"text\": \"/start {{linkToken}}\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "20b · Webhook replay again",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"replay acknowledged\", () => pm.expect(pm.response.text()).to.eql(\"ok\"));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Telegram-Bot-Api-Secret-Token",
+                "value": "{{webhookSecret}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/telegram/webhook",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "telegram",
+                "webhook"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"update_id\": 900000001,\n  \"message\": {\n    \"message_id\": 42,\n    \"date\": 1795766400,\n    \"chat\": {\n      \"id\": 123456789,\n      \"type\": \"private\"\n    },\n    \"from\": {\n      \"id\": 123456789,\n      \"is_bot\": false,\n      \"first_name\": \"Test\"\n    },\n    \"text\": \"/start {{linkToken}}\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "21 · Cron telegram",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"job name\", () => pm.expect(pm.response.json().job).to.eql(\"telegram-sweeper\"));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{cronSecret}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cron/telegram",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cron",
+                "telegram"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "22 · Cron purge",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"job name\", () => pm.expect(pm.response.json().job).to.eql(\"purge\"));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{cronSecret}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cron/purge",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cron",
+                "purge"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "23 · Revalidate",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"tag revalidated\", () => pm.expect(pm.response.json().revalidated).to.include(`place:${pm.environment.get(\"slug\")}`));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{cronSecret}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/revalidate",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "revalidate"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tags\": [\n    \"place:{{slug}}\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "09 · Negative",
+      "item": [
+        {
+          "name": "90 · Unknown slug",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 404\", () => pm.response.to.have.status(404));",
+                  "pm.test(\"NOT_FOUND\", () => pm.expect(pm.response.json().error.code).to.eql(\"NOT_FOUND\"));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/places/does-not-exist",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "places",
+                "does-not-exist"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "91 · Bad facet",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 400\", () => pm.response.to.have.status(400));",
+                  "pm.test(\"VALIDATION_FAILED\", () => pm.expect(pm.response.json().error.code).to.eql(\"VALIDATION_FAILED\"));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/places?facets=BANANA",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "places"
+              ],
+              "query": [
+                {
+                  "key": "facets",
+                  "value": "BANANA"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "92 · Reach without within",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 400\", () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/reach?town={{town}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "reach"
+              ],
+              "query": [
+                {
+                  "key": "town",
+                  "value": "{{town}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "93 · Correction too long",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 400\", () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/corrections",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "corrections"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"placeSlug\": \"{{slug}}\",\n  \"field\": \"other\",\n  \"message\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n  \"channel\": \"WEB\",\n  \"website\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "94 · Correction honeypot",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 201\", () => pm.response.to.have.status(201));",
+                  "pm.test(\"no id returned for a bot\", () => pm.expect(pm.response.json().id).to.be.undefined);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/corrections",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "corrections"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"placeSlug\": \"{{slug}}\",\n  \"field\": \"other\",\n  \"message\": \"This should be silently dropped by the honeypot.\",\n  \"channel\": \"WEB\",\n  \"website\": \"http://spam.example\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "95 · Webhook without secret",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 403\", () => pm.response.to.have.status(403));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/telegram/webhook",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "telegram",
+                "webhook"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"update_id\": 900000002\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "96 · Cron without bearer",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 401\", () => pm.response.to.have.status(401));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/cron/purge",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cron",
+                "purge"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "97 · Nearby bad latitude",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 400\", () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/nearby",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "nearby"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lat\": 200,\n  \"lon\": 76.7,\n  \"radiusM\": 15000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "98 · Unknown corridor",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 404\", () => pm.response.to.have.status(404));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/trip/not-a-corridor/pack",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "trip",
+                "not-a-corridor",
+                "pack"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "99 · Trip ends before start",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 400\", () => pm.response.to.have.status(400));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/trips",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "trips"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"corridor\": \"{{corridor}}\",\n  \"startsAt\": \"2026-12-06T14:00:00.000Z\",\n  \"endsAt\": \"2026-12-05T04:30:00.000Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "lang",
+      "value": "en"
+    }
+  ]
+}

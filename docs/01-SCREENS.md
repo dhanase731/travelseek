@@ -213,7 +213,7 @@ JOURNEY B — identity, alerts, trip
 
 ### S7 · No results / out of region
 
-- **Trigger:** `GET /api/search` returns `count: 0`, or a location outside `REGION_BBOX`.
+- **Trigger:** `GET /api/search` returns `count: 0` (`NO_MATCH`), or `POST /api/nearby` returns `inRegion: false`.
 - **Layout:** message · nearest 3 cards · two actions
 - **Copy:**
   - In region: `No exact match — did you mean…` / `சரியான பொருத்தம் இல்லை — இவை உங்களுக்கு உதவுமா…`
@@ -468,7 +468,6 @@ JOURNEY B — identity, alerts, trip
 ---
 
 ## 4. System states (not separate screens)
-
 | State | Where | Behaviour |
 |---|---|---|
 | 404 | any route | `We could not find that place.` + links to map and method |
@@ -527,3 +526,52 @@ JOURNEY B — identity, alerts, trip
 | `pack_offline_open` | S18 | `slug` |
 
 Never: a coordinate, a chat ID, a token, or free-text correction content.
+
+---
+
+## 7. First run, screen by screen
+
+What a brand-new visitor sees, in order. This is the sequence to test manually before Gate 2.
+
+| Step | Screen | What happens | What must not happen |
+|---|---|---|---|
+| 1 | S1 | Map loads centred on Coimbatore with 3+ access-point pins and a collapsed sheet reading `12 verified places…` | No modal, no permission prompt, no empty map |
+| 2 | S1 → drag | Sheet snaps to 45%, cards appear; tap a card | Cards do not show crow-flies as drive time |
+| 3 | S4 | Base town is the first control; choose Valparai, 60 min; count updates before the sheet closes | Facets are never the first control |
+| 4 | S5 | Card opens half sheet: badge, distance, verified date, 3 actions | No booking, no hotel, no weather |
+| 5 | S6 | Dossier renders 12 sections; stat row has 3 slots; `What is told` is visually distinct | No claim without a grade chip |
+| 6 | S6 | Toggle `EN | த`; URL keeps `?lang=ta`; Tamil line-height 1.75 | No English facet labels in Tamil mode |
+| 7 | S6 | Tap `This is wrong` → S8 → submit | No account required; no HTML rendered |
+| 8 | S1 | Tap search → S2 → type `சிறுவாணி` → S3 | Tamil input never falls back to English fields |
+| 9 | S3 | Remove the WATER chip; results re-query; count announced politely | No blank screen |
+| 10 | S3 | Type `qwertyuiop` → S7 with 3 nearest places | Never `be the first to add one` |
+| 11 | S1 | Tap `Use my location` → S9 → deny | Map still works from the base town |
+| 12 | S10 | Link Telegram, show code, poll, link, unlink | `chat_id` never reaches the page |
+| 13 | S13 | Digest arrives once, 3 places, feedback buttons | Never three separate messages |
+| 14 | S15 | Radius 15 km, quiet 21:30–06:30, pause 24 h | Notifications cannot be enabled without a link |
+| 15 | S17 | Declare a trip, download the pack | No download prompt on first session |
+| 16 | S18 | Airplane mode: dossier text, Tamil, badge, stat row, sources, tiles | No browser error page, no broken image |
+| 17 | S19 | Method page explains grades, 180 days, no AI copy | No marketing claims |
+
+---
+
+## 8. Screens we deliberately do not build
+
+Kiro will try to add these. Say no, with the reason.
+
+| Not a screen | Why |
+|---|---|
+| Login / signup / password reset | `device_id` + `chat_id` is enough through Phase 1 |
+| Onboarding carousel | The map is the onboarding |
+| Dashboard of feature tiles | Discovery is the product, not a tile among toys |
+| Profile / avatar / social feed | Nobody comes here for other people |
+| Booking, checkout, payments | Liability, stale inventory, wrong product |
+| Reviews, ratings, comments | No moderation capacity; the correction loop is the only feedback channel |
+| Weather widget above access status | Weather is easy; access is hard |
+| `/trending`, `/discover`, "nearby now" feed | Nothing to show at 12 places; will look broken |
+| Admin UI / CMS | Scripts + SQL are the Phase 1 admin |
+| Cookie banner maze | One consent choice, remembered |
+| App-install interstitial | PWA is installable from the browser menu; never block reading |
+| Language modal on first load | Language lives in the top bar; Tamil-first default |
+| Map clustering | Not until ~200 places |
+| Chat assistant / AI planner | No model in the product |
