@@ -247,23 +247,27 @@ SCREEN: The reading surface: documented, told, getting there — in that order.
 LAYOUT (top to bottom) — twelve fixed sections, this exact order, none removed, none reordered:
 1. Header: "சிறுவாணி அருவி" 32px/600, "Siruvani Falls" 18px #5C5F5A, chips "Water" and "Nature", "OPEN" badge, "Verified 12 Oct 2026" badge.
 2. Hook, one line, 18px.
-3. Hero image, 390×220, 12px radius, attribution line beneath.
-4. Stat row, EXACTLY 3 slots between 1px rules: "34 km" over "VALPARAI → ACCESS"; "1 h 20 m" over "DRIVE"; "4.2 km" over "LAST MILE". Numbers 24px/600, labels 12px uppercase #8E918B. Beneath: "Distance is town centre to access point. Times are driving only." / "தூரம் நகர மையத்திலிருந்து அணுகல் புள்ளி வரை. நேரம் ஓட்டும் நேரம் மட்டும்."
+3. Hero image, 390×220, attribution line beneath.
+4. Stat row, EXACTLY 3 slots between 1px rules: "34 km" over "VALPARAI → ACCESS"; "1 h 20 m" over "DRIVE"; "4.2 km" over "LAST MILE". Numbers 24px/600, labels 12px uppercase. Beneath: "Distance is town centre to access point. Times are driving only." / "தூரம் நகர மையத்திலிருந்து அணுகல் புள்ளி வரை. நேரம் ஓட்டும் நேரம் மட்டும்."
 5. "The Story": two paragraphs, 16px/1.65.
 6. "What is documented" / "ஆவணப்படுத்தப்பட்டவை" — WHITE card, 1px #E7E6E1 border: two claims, each with a 24px grade chip "A" then "B" at the right.
-7. "What is told" / "கூறப்படுபவை" — TINTED #E4EEE9 block, 12px radius, 3px #1E4E3F left border, distinct from 6: italic lead, two lore lines, a 12px "Source:" line.
+7. "What is told" / "கூறப்படுபவை" — TINTED #E4EEE9 block, 12px radius, 3px #1E4E3F left border, distinct from 6: italic lead, two lore lines, a "Source:" line.
 8. "Getting there" / "அங்கு செல்வது எப்படி" — three rows: route, last mile, transport.
 9. "Where to base yourself" / "எங்கு தங்கலாம்" — max three rows, each "Valparai · 34 km · 1 h 20 m" plus one character line.
 10. "Practical" / "நடைமுறை தகவல்" — four rows: hours, entry, season, carry.
 11. "Sensitivity note" — #FBF1DF block, #A06A0B border, two lines; only when cultural status is not secular.
 12. "Sources" table, "Verification": "Last verified 12 Oct 2026 by R. Kumar" / "கடைசி சரிபார்ப்பு 12 அக். 2026 — R. குமார்", then "This is wrong" / "இது தவறு" in #8C3A23.
-Sticky bar, 64px plus safe area, white, 1px top border: "Open in maps" primary, "Save", "Share", "This is wrong" always visible, 44px.
+Sticky bar, 64px plus safe area, white: "Open in maps" primary, "Save", "Share", "This is wrong" always visible, 44px.
+
+CONTENT: English first, Tamil beneath each heading.
 
 COMPONENTS: headings 18px/600. Grade chips 24px square.
 
-STATES: normal; offline "Offline copy" badge; UNKNOWN in #8E918B, never blank; retired place with 410 and three alternatives.
+STATES: normal; offline "Offline copy" badge; UNKNOWN in #8E918B, never blank; retired place with 410.
 
-DO NOT: no booking button, no hotel names, no weather widget, no permission modal, no AI summary, no review scores, no related-places carousel, no restricted coordinate on a map.
+DO NOT: no booking button, no hotel names, no weather widget, no permission modal, no AI summary, no review scores, no related-places carousel, no restricted coordinates.
+
+MOBILE CONSTRAINTS: 390px width, no horizontal scroll, safe-area insets, 44px targets.
 ```
 
 **Gate:** UI 3
@@ -331,6 +335,8 @@ COMPONENTS: the field picker is a vertical radio group, not chips and not a drop
 STATES: idle (shown); submitting with the button showing a 16px spinner and reduced opacity; success where the sheet closes and a toast reads "Thank you. Your report is with a reviewer." / "நன்றி. உங்கள் தகவல் சரிபார்ப்பாளரிடம் உள்ளது."; rate limited showing "Too many reports. Try again in an hour."; error that preserves everything typed.
 
 DO NOT: no login prompt, no account creation, no file upload, no map picker, no captcha widget, no required email, no "submit another" loop, no exposing the honeypot.
+
+MOBILE CONSTRAINTS: 390px width, no horizontal scroll, safe-area insets, 44px targets.
 ```
 
 **Gate:** UI 3
@@ -394,13 +400,15 @@ LAYOUT (top to bottom):
 6. Status line, 44px, centred with a 12px pulsing dot #1E4E3F: "Waiting for Telegram…" / "டெலிகிராமிற்காக காத்திருக்கிறது…".
 7. Unlink block at the bottom, only when linked: 1px top divider, "Unlink" / "இணைப்பை நீக்கு" as a 44px text button in #8C3A23.
 
-CONTENT: the code is always four characters from A–Z and 2–9, never a word. Show "K7QP".
+CONTENT: the code is four characters from a 32-character set that excludes I, O, 0 and 1. Show "K7QP".
 
 COMPONENTS: the code block is the only large element on the page. No QR code, no phone mock.
 
 STATES: code shown (default); creating, where the code block holds four grey skeleton bars; expired, where the code turns #8E918B and the line reads "Code expired. Get a new one."; linked, where the code block and countdown are replaced by "Linked. At most 3 digests a day." / "இணைக்கப்பட்டது. நாளொன்றுக்கு அதிகபட்சம் 3 அறிவிப்புகள்." and the unlink block appears; error.
 
 DO NOT: no QR code, no chat ID anywhere, no token in a URL, no auto-opening Telegram without a tap, no "scan to link", no countdown under 60 seconds, no dark panel.
+
+MOBILE CONSTRAINTS: 390px width, no horizontal scroll, safe-area insets, 44px targets.
 ```
 
 **Gate:** UI 5
@@ -436,6 +444,8 @@ COMPONENTS: the four commands render on one line in 14px monospace, not as butto
 STATES: this success thread (shown); wrong code variant, where the last bot bubble reads "That code does not match. 2 attempts left." / "குறியீடு பொருந்தவில்லை. 2 முயற்சிகள் மீதம்."; expired token variant with the same bare-link message.
 
 DO NOT: no inline keyboard, no "Connect" button, no QR code, no chat ID, no phone number request, no welcome image, no typing indicator animation in the mock, no second bot.
+
+MOBILE CONSTRAINTS: 390px chat width, no horizontal scroll, safe-area insets, 44px buttons.
 ```
 
 **Gate:** UI 5
@@ -469,6 +479,8 @@ COMPONENTS: this is a reply keyboard, not an inline keyboard — it sits above t
 STATES: instruction shown (default); an expired session re-sends the same message and never shows stale places.
 
 DO NOT: no claim that the bot starts, extends, or monitors location, no "Enable location" toggle, no map thumbnail, no coordinates, no inline keyboard, no permission dialog mock, no countdown.
+
+MOBILE CONSTRAINTS: 390px chat width, no horizontal scroll, safe-area insets, 44px buttons.
 ```
 
 **Gate:** UI 5
@@ -513,11 +525,13 @@ Keyboard row 2: [ 👍 Useful ] [ 👎 Not now ] [ ⛔ Closed ] [ ✏️ Wrong ]
 
 COMPONENTS: the leaf in the headline is the only emoji. Status words are bold text, not coloured chips. No photos, no link preview, no map.
 
-STATES: the digest; a two-place variant headed "2 verified places near you" with one block removed; a one-place variant likewise.
+STATES: the digest; a two-place variant headed "2 verified places near you"; a one-place variant.
 
 BUDGET: under 900 characters, hard cap 1 024. Keep the body exactly as written; add no greeting, sign-off or second paragraph.
 
 DO NOT: no coordinates, no map, no live-location pin, no photos, no link preview, no more than three places, no more than two keyboard rows, no coloured status chips, no "unsubscribe" footer.
+
+MOBILE CONSTRAINTS: 390px chat width, no horizontal scroll, safe-area insets, 44px buttons.
 ```
 
 **Gate:** UI 5
@@ -552,6 +566,8 @@ COMPONENTS: the four replies are separate bubbles, not one message with four lin
 STATES: the four acknowledgements shown as a reference thread; a variant where only one reply follows the digest, for a realistic single tap.
 
 DO NOT: no "place updated" claim, no "removed" claim, no rating stars, no follow-up question, no correction form link, no coordinates, no undo button.
+
+MOBILE CONSTRAINTS: 390px chat width, no horizontal scroll, safe-area insets, 44px buttons.
 ```
 
 **Gate:** UI 5
@@ -580,13 +596,15 @@ LAYOUT (top to bottom):
 9. "Privacy" block: "No coordinates stored. Distance is saved as a band only." at 14px, with Tamil "இருப்பிட ஒருங்கிணைப்புகள் சேமிக்கப்படுவதில்லை." beneath at 12px.
 10. "Unlink Telegram" as a 44px text button in #8C3A23 at the bottom, left-aligned.
 
-CONTENT: use the strings exactly. The budget is a count, not a progress ring.
+CONTENT: exactly the strings. The budget is a count, not a progress ring.
 
-COMPONENTS: rows are separated by 1px #E7E6E1 dividers, no cards except the link status and the digest note. Segmented controls share one border with 6px inner radius.
+COMPONENTS: rows are separated by 1px #E7E6E1 dividers, no cards except the link status and the digest note. Segmented controls share one border.
 
 STATES: linked (shown); not linked, where the radius and quiet-hours blocks drop to 40% opacity and a line reads "Link Telegram to set alerts"; paused, with a #FBF1DF banner and the button changing to "Resume now"; saving, with an optimistic toggle and a 12px "Saving…" line.
 
 DO NOT: no map, no coordinate display, no location history list, no per-place alert toggles, no email or SMS channel, no "test notification" button, no destructive action at the top.
+
+MOBILE CONSTRAINTS: 390px width, no horizontal scroll, safe-area insets, 44px targets.
 ```
 
 **Gate:** UI 5
@@ -621,6 +639,8 @@ COMPONENTS: rows are not cards; dividers do the work. "Remove" is a text button,
 STATES: populated (shown); empty, where the list is replaced by a centred block reading "Nothing saved yet. Tap Save on any dossier." / "இன்னும் எதுவும் சேமிக்கப்படவில்லை. ஏதேனும் ஒரு விவரத்தில் Save அழுத்துங்கள்."; a row whose slug is in a downloaded pack, carrying the "In your offline pack" badge.
 
 DO NOT: no account prompt, no cloud sync, no share-all, no coordinates, no map, no sort control, no search within saved, no "sign in to keep your saves".
+
+MOBILE CONSTRAINTS: 390px width, no horizontal scroll, safe-area insets, 44px targets.
 ```
 
 **Gate:** UI 6
@@ -652,9 +672,11 @@ CONTENT: use the exact strings. The summary uses middle dots, not commas.
 
 COMPONENTS: one primary action on the page. The progress bar is a thin line, not a circle. No map preview of the corridor, no stop list.
 
-STATES: not downloaded (shown, progress block hidden); downloading at 42% with cancel; downloaded, showing a version and date line with the download button removed; quota warning "Not enough space. Free 50 MB and retry." in a #FBF1DF note; metered connection warning with a "Download anyway" text link.
+STATES: not downloaded (shown, progress block hidden); downloading at 42% with cancel; downloaded, showing a version and date line with the download button removed; quota warning "Not enough space. Free 50 MB and retry." in a #FBF1DF note; metered connection warning with a confirm action.
 
 DO NOT: no prompt on first session, no automatic download, no background sync claim, no account requirement, no hotel or fuel stop list, no map, no second primary button.
+
+MOBILE CONSTRAINTS: 390px width, no horizontal scroll, safe-area insets, 44px targets.
 ```
 
 **Gate:** UI 6
@@ -688,6 +710,8 @@ COMPONENTS: the banner is the only chrome added. The "Offline copy" badge uses t
 STATES: cached dossier (shown); uncached dossier, where sections 2–7 are replaced by the message in section 8; back online, where a toast reads "Back online." / "மீண்டும் இணைப்பில்." and no reload happens.
 
 DO NOT: no browser error page, no broken image icon, no endless spinner, no blocking retry modal, no stat row removed, no "check your connection" full-screen state, no greyed-out body text.
+
+MOBILE CONSTRAINTS: 390px width, no horizontal scroll, safe-area insets, 44px targets.
 ```
 
 **Gate:** UI 6
@@ -706,7 +730,7 @@ SCREEN: Explain how verification works. This is a trust surface, not a paragraph
 
 LAYOUT (top to bottom) — nine sections in this order:
 1. Title block: "How Wild Atlas is verified" / "வைல்ட் அட்லஸ் எப்படி சரிபார்க்கப்படுகிறது" at 32px/600, then the lede "Every fact has a source. Every source has a grade." / "ஒவ்வொரு தகவலுக்கும் ஆதாரம். ஒவ்வொரு ஆதாரத்துக்கும் தரம்." at 18px #5C5F5A.
-2. "What "verified" means" heading, then two short paragraphs at 16px: a human checked access, not just existence.
+2. Heading: What "verified" means, then two short paragraphs at 16px: a human checked access, not just existence.
 3. "Source grades" heading, then a table with four rows A, B, C, D: a 24px square grade chip at the left and one 14px description line per row. No zebra striping, 1px dividers only.
 4. "Fact vs lore" heading, then a two-part comparison: a WHITE block labelled "What is documented" and a TINTED #E4EEE9 block labelled "What is told", side by side on desktop and stacked on mobile, each with two lines of sample text.
 5. "The 180-day rule" heading, then a #FBF1DF callout with a 1px #A06A0B border: "A place disappears after 180 days without re-verification." / "180 நாட்களுக்கு மறுசரிபார்ப்பு இல்லாவிட்டால் இடம் நீங்கும்."
@@ -715,13 +739,15 @@ LAYOUT (top to bottom) — nine sections in this order:
 8. "Privacy" heading, then one paragraph: no coordinates stored, distance saved as a band.
 9. Closing block: "No AI-written descriptions." / "AI எழுதிய விவரங்கள் இல்லை." at 20px/600, then a 14px contact line.
 
-CONTENT: keep every section to one screen-width column, max 68 characters per line. No author byline, no dates on the page.
+CONTENT: one column, max 68 characters per line. No byline, no dates.
 
 COMPONENTS: headings 20px/600 with 32px top margin. The grades table is the only table. The fact-versus-lore pair must reuse the exact treatment from the dossier: white documented, tinted told.
 
-STATES: English default (shown); Tamil variant with the same order and the Tamil strings above; reduced-motion variant with no scroll animation.
+STATES: English default; Tamil variant, same order; reduced-motion variant.
 
 DO NOT: no marketing headline, no team photos, no testimonials, no statistics counters, no "learn more" cards, no newsletter signup, no dark section, no accordion that hides the grades.
+
+MOBILE CONSTRAINTS: 390px width, no horizontal scroll, safe-area insets, 44px targets.
 ```
 
 **Gate:** UI 3
