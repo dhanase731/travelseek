@@ -1049,8 +1049,8 @@ Next.js route handler or RSC  ──►  db/queries/*.ts  ──►  Drizzle  �
 | `town` | `valparai` | you |
 | `corridor` | `coimbatore-valparai` | you |
 | `tripId` | — | `16 · Create trip` test script |
-| `linkToken` | — | `12 · Create link` test script |
-| `linkCode` | — | `12 · Create link` test script |
+| `linkToken` | — | `11 · Create link` test script |
+| `linkCode` | — | `11 · Create link` test script |
 | `cronSecret` | `local-cron-secret-123456` | you (must match `.env.local`) |
 | `webhookSecret` | `local-webhook-secret-123456` | you (must match `.env.local`) |
 | `deviceId` | `11111111-1111-4111-8111-111111111111` | you (dev only) |
@@ -1062,10 +1062,10 @@ Next.js route handler or RSC  ──►  db/queries/*.ts  ──►  Drizzle  �
 | 00 Health | 01 | 200, `db: up` |
 | 01 Read | 02–05 | 200; no `location` key |
 | 02 Search | 06–08 | Tamil query ranks Siruvani first; nonsense → `NO_MATCH` |
-| 03 Geo | 09–10 | reach 200; Chennai → `inRegion:false` |
-| 04 Write | 11 | 201; rate limit after 5 |
-| 05 Telegram | 12–14 | 201 + code; status `PENDING`; unlink 200 |
-| 06 Prefs | 15–16 | defaults; invalid radius → 400 |
+| 03 Geo | 08b, 09 | reach 200; Chennai → `inRegion:false` |
+| 04 Write | 10 | 201; rate limit after 5 |
+| 05 Telegram | 11–13 | 201 + code; webhook binds pending; status `PENDING`; unlink 200 |
+| 06 Prefs | 14–15 | defaults; invalid radius → 400 |
 | 07 Trips | 16–19 | 201; repeat → 200 same id; manifest has no `location` |
 | 08 Internal | 20–23 | 401 without bearer; 200 with |
 | 09 Negative | 90–99 | see below |
@@ -1077,12 +1077,12 @@ Next.js route handler or RSC  ──►  db/queries/*.ts  ──►  Drizzle  �
 | 90 | `GET /api/places/siruvani-falls` with `slug=does-not-exist` | 404 `NOT_FOUND` |
 | 91 | `GET /api/places?facets=BANANA` | 400 `VALIDATION_FAILED` |
 | 92 | `GET /api/reach?town=valparai` (no `within`) | 400 |
-| 93 | `POST /api/corrections` with a 5 000-char message | 400 |
+| 93 | `POST /api/corrections` with a 2 100-character message | 400 |
 | 94 | `POST /api/corrections` with `website` filled | 201, no row |
 | 95 | `POST /api/telegram/webhook` without the secret header | 403 |
 | 96 | `POST /api/cron/purge` without bearer | 401 |
 | 97 | `POST /api/nearby` with `lat: 200` | 400 |
-| 98 | `GET /api/places/restricted-fixture` | 404 or 410 — never coordinates |
+| 98 | `GET /api/trip/not-a-corridor/pack` | 404 `NOT_FOUND` |
 | 99 | `POST /api/trips` with `endsAt` before `startsAt` | 400 |
 
 ### 10.5 The assertion that matters

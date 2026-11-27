@@ -292,7 +292,11 @@
                   "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
                   "const b = pm.response.json();",
                   "pm.test(\"WATER facet detected\", () => pm.expect(b.intent.facets).to.include(\"WATER\"));",
-                  "pm.test(\"town hint detected\", () => pm.expect(b.intent.townHint).to.eql(\"valparai\"));"
+                  "pm.test(\"town hint detected\", () => pm.expect(b.intent.townHint).to.eql(\"valparai\"));",
+                  "pm.test(\"no site coordinates leaked\", () => {",
+                  "  pm.expect(pm.response.text()).to.not.include('\"location\"');",
+                  "  pm.expect(pm.response.text()).to.not.include(\"publish_site_coordinates\");",
+                  "});"
                 ]
               }
             }
@@ -333,7 +337,11 @@
                 "exec": [
                   "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
                   "const b = pm.response.json();",
-                  "pm.test(\"max 8 suggestions\", () => pm.expect(b.suggestions.length).to.be.at.most(8));"
+                  "pm.test(\"max 8 suggestions\", () => pm.expect(b.suggestions.length).to.be.at.most(8));",
+                  "pm.test(\"no site coordinates leaked\", () => {",
+                  "  pm.expect(pm.response.text()).to.not.include('\"location\"');",
+                  "  pm.expect(pm.response.text()).to.not.include(\"publish_site_coordinates\");",
+                  "});"
                 ]
               }
             }
@@ -429,6 +437,55 @@
       "name": "03 · Geo",
       "item": [
         {
+          "name": "08b · Nearby outside region",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Chennai is outside the region\", () => pm.expect(pm.response.json().inRegion).to.eql(false));",
+                  "pm.test(\"no places returned\", () => pm.expect(pm.response.json().count).to.eql(0));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Device-Id",
+                "value": "{{deviceId}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/nearby",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "nearby"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lat\": 13.0827,\n  \"lon\": 80.2707,\n  \"radiusM\": 15000,\n  \"lang\": \"en\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
           "name": "09 · Reach",
           "event": [
             {
@@ -477,55 +534,6 @@
                   "value": "{{lang}}"
                 }
               ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "08b · Nearby outside region",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "pm.test(\"status 200\", () => pm.response.to.have.status(200));",
-                  "pm.test(\"Chennai is outside the region\", () => pm.expect(pm.response.json().inRegion).to.eql(false));",
-                  "pm.test(\"no places returned\", () => pm.expect(pm.response.json().count).to.eql(0));"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "X-Device-Id",
-                "value": "{{deviceId}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{baseUrl}}/api/nearby",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "nearby"
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"lat\": 13.0827,\n  \"lon\": 80.2707,\n  \"radiusM\": 15000,\n  \"lang\": \"en\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": []
@@ -1008,6 +1016,10 @@
                   "pm.test(\"stops ordered\", () => {",
                   "  const orders = b.stops.map((s) => s.order);",
                   "  pm.expect(orders).to.eql([...orders].sort((a, c) => a - c));",
+                  "});",
+                  "pm.test(\"no site coordinates leaked\", () => {",
+                  "  pm.expect(pm.response.text()).to.not.include('\"location\"');",
+                  "  pm.expect(pm.response.text()).to.not.include(\"publish_site_coordinates\");",
                   "});"
                 ]
               }

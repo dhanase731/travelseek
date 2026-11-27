@@ -72,7 +72,7 @@ LAYOUT (top to bottom):
 2. Search pill, 48px, #F3F2EE, 999px radius, 18px magnifier #5C5F5A, placeholder "Search a place, a town, a waterfall…" with Tamil "இடம், நகரம், அருவி தேடுங்கள்…" beneath it at 12px #8E918B.
 3. Control row A, 44px: one full-width chip, white, 1px #E7E6E1 border, label "Base town: Valparai ▾" and Tamil "அடித்தள நகரம்" at 12px.
 4. Control row B, 44px, two chips with an 8px gap: "Within 60 min ▾" / "60 நிமிடங்களுக்குள்" and "Filters" / "வடிகட்டி".
-5. Map canvas filling the rest of the viewport: warm #F3F2EE land, white roads, muted #DCE7DD patches, town names only, 12px #5C5F5A. Eight ROUND 14px pins #1E4E3F = places. Three SQUARE 14px pins #8A5A1E = towns (Valparai, Pollachi, Anaikatti). Selected pin has a 2px white ring. No user-location dot.
+5. Map canvas filling the rest of the viewport: warm #F3F2EE land, white roads, muted #DCE7DD patches, town names only, 12px #5C5F5A. Eight of the twelve ROUND 14px pins #1E4E3F = places. Three SQUARE 14px pins #8A5A1E = towns (Valparai, Pollachi, Anaikatti). Selected pin has a 2px white ring. No user-location dot.
 6. Bottom sheet collapsed to 18% of screen height: 36×4px #E7E6E1 drag handle, then "12 verified places within 60 min of Valparai" 15px/600, then "Verified 12 Oct 2026" 12px #8E918B with Tamil "சரிபார்ப்பு 12 அக். 2026".
 
 CONTENT: render the copy exactly as written, English first with Tamil beneath. Add no other place names.
@@ -103,7 +103,7 @@ SCREEN: Turn a vague intent into a query, in one field, without leaving the map 
 LAYOUT (top to bottom):
 1. Full-height overlay on #FCFCFA, covering the map completely, no scrim visible.
 2. Top row, 56px: 44px back arrow at left, then a borderless input that is already focused, then a 44px clear "×". A 1px #1A1A18 caret sits at the start of the input.
-3. Input placeholder, two lines: "Try "waterfall near Valparai"" at 16px #8E918B, and Tamil ""வால்பாறை அருகில் அருவி" என்று முயற்சிக்கவும்" at 14px.
+3. Input placeholder, two lines: Try "waterfall near Valparai" at 16px #8E918B, and Tamil "வால்பாறை அருகில் அருவி" என்று முயற்சிக்கவும் at 14px.
 4. 1px divider #E7E6E1.
 5. Group header "Places" / "இடங்கள்": 12px uppercase #8E918B, 16px top margin. Three rows.
 6. Group header "Towns" / "நகரங்கள்": two rows.
@@ -143,7 +143,7 @@ LAYOUT (top to bottom):
 1. Top bar, 56px, identical to the map home: wordmark, "EN | த", menu.
 2. Search pill, 48px, showing the active query "waterfalls near Valparai" in #1A1A18, with a 44px clear "×" at the right.
 3. Intent row, 44px, three removable chips: "Waterfalls ×", "Valparai ×", "60 min ×". Chips are #E4EEE9 with a #1E4E3F border; the "×" is a 24px tap zone inside a 44px chip.
-4. Count line, 24px tall: "2 places match "waterfalls near Valparai"" at 15px/600, with Tamil ""வால்பாறை அருகில் அருவி"க்கு 2 இடங்கள்" at 12px beneath.
+4. Count line, 24px tall: 2 places match "waterfalls near Valparai" at 15px/600, with Tamil "வால்பாறை அருகில் அருவி"க்கு 2 இடங்கள் at 12px beneath.
 5. Map band, 200px tall, same warm map style, two active pins and the rest dimmed to 30% opacity. No zoom controls.
 6. Sort control, 44px: "Drive time" selected, "Recently verified" unselected, right-aligned above the list, 14px.
 7. Result list: two full-width rows, 1px #E7E6E1 divider between them.
@@ -253,7 +253,7 @@ LAYOUT (top to bottom) — twelve fixed sections, this exact order, none removed
 6. "What is documented" / "ஆவணப்படுத்தப்பட்டவை" — WHITE card, 1px #E7E6E1 border: two claims, each with a 24px grade chip "A" then "B" at the right.
 7. "What is told" / "கூறப்படுபவை" — TINTED #E4EEE9 block, 12px radius, 3px #1E4E3F left border, distinct from 6: italic lead, two lore lines, a 12px "Source:" line.
 8. "Getting there" / "அங்கு செல்வது எப்படி" — three rows: route, last mile, transport.
-9. "Where to base yourself" / "எங்கு தங்கலாம்" — two rows, "Valparai · 34 km · 1 h 20 m" and "Pollachi · 52 km · 1 h 45 m".
+9. "Where to base yourself" / "எங்கு தங்கலாம்" — max three rows, each "Valparai · 34 km · 1 h 20 m" plus one character line.
 10. "Practical" / "நடைமுறை தகவல்" — four rows: hours, entry, season, carry.
 11. "Sensitivity note" — #FBF1DF block, #A06A0B border, two lines; only when cultural status is not secular.
 12. "Sources" table, "Verification": "Last verified 12 Oct 2026 by R. Kumar" / "கடைசி சரிபார்ப்பு 12 அக். 2026 — R. குமார்", then "This is wrong" / "இது தவறு" in #8C3A23.
@@ -320,8 +320,8 @@ LAYOUT (top to bottom):
 2. Title row, 56px: "What is wrong?" / "என்ன தவறு?" at 24px/600, and a 44px close "×" at the right.
 3. Subtitle, two lines, 14px #5C5F5A: "No account needed. A reviewer checks this within 48 hours." / "கணக்கு தேவையில்லை. 48 மணி நேரத்தில் ஒரு சரிபார்ப்பாளர் பார்க்கிறார்."
 4. Field picker: five radio rows, 44px each, full width, 1px divider between: "Access window", "Location", "Last mile", "Sources", "Other". "Access window" is selected: #E4EEE9 background, 1px #1E4E3F border, 16px filled radio.
-5. Textarea, 120px tall, 1px #E7E6E1 border, 10px radius, placeholder "What did you see or read?" at 16px #8E918B. A live counter "0 / 2000" sits at the bottom-right inside the field, 12px #8E918B.
-6. Optional email field, 44px, label "Email (optional)" at 12px uppercase, helper "Only if you want a reply." at 12px #8E918B.
+5. Textarea, 120px tall, 1px #E7E6E1 border, 10px radius, no placeholder. A live counter "0 / 2000" sits at the bottom-right inside the field, 12px #8E918B.
+6. Optional email field, 44px, label "Email (optional)" at 12px uppercase, no helper text.
 7. Primary button, 48px, full width, #1E4E3F: "Send report". 16px gap above the safe area.
 
 CONTENT: use the exact strings above. Do not add a subject line, a name field, or a category description.
@@ -385,9 +385,9 @@ SCREEN: Show a four-character code and a way into Telegram, then wait visibly wh
 LAYOUT (top to bottom):
 1. Top bar, 56px: 44px back arrow, page title "Link Telegram" / "டெலிகிராமை இணை" at 18px/600, no menu.
 2. Three numbered steps, each 64px tall: a 24px circle with "1", "2", "3" in #E4EEE9 and #1E4E3F, then the step text at 16px, 12px gap. Steps read exactly:
-   1 "Open Telegram and press Start." / "டெலிகிராமைத் திறந்து Start அழுத்துங்கள்."
-   2 "Enter this code in the chat." / "இந்தக் குறியீட்டை அரட்டையில் உள்ளிடுங்கள்."
-   3 "Come back here. This page updates itself." / "இங்கே திரும்பி வாருங்கள். இந்தப் பக்கம் தானாக புதுப்பிக்கும்."
+   Step 1 — "Open Telegram and press Start." / "டெலிகிராமைத் திறந்து Start அழுத்துங்கள்."
+   Step 2 — "Enter this code in the chat." / "இந்தக் குறியீட்டை அரட்டையில் உள்ளிடுங்கள்."
+   Step 3 — "Come back here. This page updates itself." / "இங்கே திரும்பி வாருங்கள். இந்தப் பக்கம் தானாக புதுப்பிக்கும்."
 3. Code block, 96px tall, #F3F2EE, 12px radius, centred: "K7QP" at 40px/600, letter-spaced 8px, #1A1A18. A 44px "Copy" text button sits at the right edge.
 4. Primary button, 48px, full width, #1E4E3F: "Open Telegram".
 5. Countdown, 14px #8E918B, centred: "Expires in 4:58" / "4:58 இல் காலாவதியாகும்".
@@ -466,7 +466,7 @@ CONTENT: the three paragraphs are statements, not steps with numbers. Do not add
 
 COMPONENTS: this is a reply keyboard, not an inline keyboard — it sits above the input field, spans the chat width, and replaces the phone keyboard. No inline buttons under the bubble.
 
-STATES: instruction shown (default); a variant where the person has already shared and the bot bubble is replaced by "Live location received." — do not add coordinates or a map preview.
+STATES: instruction shown (default); an expired session re-sends the same message and never shows stale places.
 
 DO NOT: no claim that the bot starts, extends, or monitors location, no "Enable location" toggle, no map thumbnail, no coordinates, no inline keyboard, no permission dialog mock, no countdown.
 ```
@@ -536,7 +536,7 @@ SCREEN: Show what happens after each of the four feedback buttons is tapped — 
 
 LAYOUT (top to bottom):
 1. Telegram header, 56px, white.
-2. Chat thread on #F3F2EE. First, a compact copy of the digest bubble: bold "3 verified places near you", one italic meta line, then a single 14px line "Puthuthottam · Chinnakallar · Nallamudi viewpoint". Keep it to 96px tall.
+2. Chat thread on #F3F2EE. First, a compact copy of the digest bubble: bold headline and one italic meta line, 96px tall, no place blocks.
 3. Under that bubble, the inline keyboard row of four buttons, 44px tall, white, 1px #E7E6E1 border: [ 👍 Useful ] [ 👎 Not now ] [ ⛔ Closed ] [ ✏️ Wrong ].
 4. Then four bot bubbles stacked in the thread, #FFFFFF, 12px radius, max 85% width, each 44–56px tall, in this order:
    - "Thanks — noted." / "நன்றி — பதிவு செய்யப்பட்டது."
@@ -570,7 +570,7 @@ SCREEN: Set radius, quiet hours, pause and budget for Telegram digests — and b
 
 LAYOUT (top to bottom):
 1. Top bar, 56px: 44px back arrow, title "Alerts" / "அறிவிப்புகள்" at 18px/600.
-2. Link status card, 72px, #E4EEE9, 12px radius: "Linked as @kumar_v" 15px/600 with a 8px #1E7A4C dot, and a 44px "Manage" text button at the right.
+2. Link status card, 72px, #E4EEE9, 12px radius: "Linked as @kumar_v" 15px/600 with a 8px #1E7A4C dot, and a 44px "Link Telegram" text button at the right.
 3. "Notifications" row, 56px, with a 48×28px toggle in the on position, #1E4E3F.
 4. "Radius" / "சுற்றளவு" label, then a 44px segmented control: "5", "10", "15", "25 km", with "15" selected.
 5. "Quiet hours" / "அமைதி நேரம்" label, then two 44px time fields side by side reading "22:00" and "07:00" with a dash between, then the hint "Overnight" at 12px #8E918B.
@@ -584,7 +584,7 @@ CONTENT: use the strings exactly. The budget is a count, not a progress ring.
 
 COMPONENTS: rows are separated by 1px #E7E6E1 dividers, no cards except the link status and the digest note. Segmented controls share one border with 6px inner radius.
 
-STATES: linked (shown); not linked, where the radius and quiet-hours blocks drop to 40% opacity and a line reads "Link Telegram to set alerts"; paused, with a #FBF1DF banner "Paused until 12 Oct 2026, 18:40" and the button changing to "Resume now"; saving, with an optimistic toggle and a 12px "Saving…" line.
+STATES: linked (shown); not linked, where the radius and quiet-hours blocks drop to 40% opacity and a line reads "Link Telegram to set alerts"; paused, with a #FBF1DF banner and the button changing to "Resume now"; saving, with an optimistic toggle and a 12px "Saving…" line.
 
 DO NOT: no map, no coordinate display, no location history list, no per-place alert toggles, no email or SMS channel, no "test notification" button, no destructive action at the top.
 ```
@@ -618,7 +618,7 @@ CONTENT:
 
 COMPONENTS: rows are not cards; dividers do the work. "Remove" is a text button, never a red filled button. No checkboxes, no multi-select mode, no drag handles.
 
-STATES: populated (shown); empty, where the list is replaced by a centred block reading "Nothing saved yet. Tap Save on any dossier." / "இன்னும் எதுவும் சேமிக்கப்படவில்லை. ஏதேனும் ஒரு விவரத்தில் Save அழுத்துங்கள்." with a 44px "Open the map" text link; pack downloaded, where the footer button changes to "View trip pack".
+STATES: populated (shown); empty, where the list is replaced by a centred block reading "Nothing saved yet. Tap Save on any dossier." / "இன்னும் எதுவும் சேமிக்கப்படவில்லை. ஏதேனும் ஒரு விவரத்தில் Save அழுத்துங்கள்."; a row whose slug is in a downloaded pack, carrying the "In your offline pack" badge.
 
 DO NOT: no account prompt, no cloud sync, no share-all, no coordinates, no map, no sort control, no search within saved, no "sign in to keep your saves".
 ```
@@ -643,7 +643,7 @@ LAYOUT (top to bottom):
 3. Dates row, 44px: label "Dates" at 12px uppercase, then a 44px field reading "12 Oct 2026 → 14 Oct 2026", and a 12px hint "Optional but recommended." in #8E918B.
 4. Pack summary card, 88px, #F3F2EE, 12px radius, centred: "6 dossiers · 38 MB map · 22 towns" at 16px/600, with Tamil "6 விவரங்கள் · 38 எம்பி வரைபடம் · 22 நகரங்கள்" at 13px beneath.
 5. Primary button, 48px, full width, #1E4E3F: "Download pack" / "தொகுப்பைப் பதிவிறக்கு".
-6. Progress block, 64px, hidden until download starts: a 6px track #E7E6E1 with a #1E4E3F fill at 42%, a 14px line "Downloading 16 of 38 MB", and a 44px "Cancel" text button at the right.
+6. Progress block, 64px, hidden until download starts: a 6px track #E7E6E1 with a #1E4E3F fill at 42%, a 14px progress line, and a 44px "Cancel" text button at the right.
 7. Storage line, 14px #5C5F5A: "Uses about 40 MB. 2.1 GB free."
 8. "Delete pack" as a 44px text button in #8C3A23, disabled at 40% opacity when nothing is downloaded.
 9. Note, 14px #5C5F5A: "Works in airplane mode. Distances are precomputed." with Tamil "விமானப் பயன்முறையிலும் வேலை செய்யும்." beneath at 13px.
@@ -652,7 +652,7 @@ CONTENT: use the exact strings. The summary uses middle dots, not commas.
 
 COMPONENTS: one primary action on the page. The progress bar is a thin line, not a circle. No map preview of the corridor, no stop list.
 
-STATES: not downloaded (shown, progress block hidden); downloading at 42% with cancel; downloaded, showing "Downloaded 12 Oct 2026 · v3" and the button replaced by "Update pack"; quota warning "Not enough space. Free 50 MB and retry." in a #FBF1DF note; metered connection warning with a "Download anyway" text link.
+STATES: not downloaded (shown, progress block hidden); downloading at 42% with cancel; downloaded, showing a version and date line with the download button removed; quota warning "Not enough space. Free 50 MB and retry." in a #FBF1DF note; metered connection warning with a "Download anyway" text link.
 
 DO NOT: no prompt on first session, no automatic download, no background sync claim, no account requirement, no hotel or fuel stop list, no map, no second primary button.
 ```
@@ -674,12 +674,12 @@ SCREEN: Prove the product still works with no signal — text, Tamil, badge, sta
 LAYOUT (top to bottom):
 1. Thin banner, 32px, #F3F2EE, 1px bottom border, centred 12px #5C5F5A: "Offline — showing your saved trip pack." / "இணையமில்லை — சேமித்த பயணத் தொகுப்பு காட்டப்படுகிறது."
 2. Dossier header, as on the dossier screen: "சிறுவாணி அருவி" 32px/600, "Siruvani Falls" 18px, chips "Water" and "Nature", badge "OPEN", plus an "Offline copy" badge in #F3F2EE with #5C5F5A text.
-3. Hero image replaced by a neutral #F3F2EE block, 390×180, with a 24px landscape glyph and the 12px line "Image not cached" beneath — never a broken image icon.
+3. Hero image replaced by a neutral #F3F2EE block, 390×180, with a 24px landscape glyph and a 12px neutral caption beneath — never a broken image icon.
 4. Stat row, exactly 3 slots: "34 km" / "VALPARAI → ACCESS", "1 h 20 m" / "DRIVE", "4.2 km" / "LAST MILE", all still legible.
 5. "The Story" heading and two paragraphs of body text, fully rendered.
 6. "Sources" table, three rows, fully rendered, with the 12px line "Last verified 12 Oct 2026 by R. Kumar".
-7. Map area, 200px, showing cached tiles at reduced contrast with a 12px note "Map from your pack. Zoom limited offline." If tiles are absent, hide the map and keep the note.
-8. Bottom block for an uncached place: "This place is not in your pack." / "இந்த இடம் உங்கள் தொகுப்பில் இல்லை." at 16px, with a 44px text link "Open saved places".
+7. Map area, 200px, showing cached tiles at reduced contrast with a 12px neutral note. If tiles are absent, hide the map and keep the note.
+8. Bottom block for an uncached place: "This place is not in your pack." / "இந்த இடம் உங்கள் தொகுப்பில் இல்லை." at 16px, with a 44px text link to Saved places.
 
 CONTENT: no spinner anywhere. Nothing on the page suggests a retry is required to read.
 
@@ -687,7 +687,7 @@ COMPONENTS: the banner is the only chrome added. The "Offline copy" badge uses t
 
 STATES: cached dossier (shown); uncached dossier, where sections 2–7 are replaced by the message in section 8; back online, where a toast reads "Back online." / "மீண்டும் இணைப்பில்." and no reload happens.
 
-DO NOT: no browser error page, no broken image icon, no endless spinner, no blocking retry modal, no hidden stat row, no "check your connection" full-screen state, no greyed-out body text.
+DO NOT: no browser error page, no broken image icon, no endless spinner, no blocking retry modal, no stat row removed, no "check your connection" full-screen state, no greyed-out body text.
 ```
 
 **Gate:** UI 6

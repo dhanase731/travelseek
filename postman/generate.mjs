@@ -171,6 +171,7 @@ const collection = {
             'const b = pm.response.json();',
             'pm.test("WATER facet detected", () => pm.expect(b.intent.facets).to.include("WATER"));',
             'pm.test("town hint detected", () => pm.expect(b.intent.townHint).to.eql("valparai"));',
+            ...NO_LOCATION,
           ],
         }),
         req('07 · Suggest', 'GET', '/api/search/suggest', {
@@ -182,6 +183,7 @@ const collection = {
             ...ok(200),
             'const b = pm.response.json();',
             'pm.test("max 8 suggestions", () => pm.expect(b.suggestions.length).to.be.at.most(8));',
+            ...NO_LOCATION,
           ],
         }),
         req('08 · Nearby', 'POST', '/api/nearby', {
@@ -204,6 +206,15 @@ const collection = {
     {
       name: '03 · Geo',
       item: [
+        req('08b · Nearby outside region', 'POST', '/api/nearby', {
+          body: { lat: 13.0827, lon: 80.2707, radiusM: 15000, lang: 'en' },
+          headers: deviceHeader,
+          tests: [
+            ...ok(200),
+            'pm.test("Chennai is outside the region", () => pm.expect(pm.response.json().inRegion).to.eql(false));',
+            'pm.test("no places returned", () => pm.expect(pm.response.json().count).to.eql(0));',
+          ],
+        }),
         req('09 · Reach', 'GET', '/api/reach', {
           query: [
             ['town', '{{town}}'],
@@ -219,15 +230,6 @@ const collection = {
             '  if (b.count < 3) pm.expect(b.hull).to.be.null;',
             '});',
             ...NO_LOCATION,
-          ],
-        }),
-        req('08b · Nearby outside region', 'POST', '/api/nearby', {
-          body: { lat: 13.0827, lon: 80.2707, radiusM: 15000, lang: 'en' },
-          headers: deviceHeader,
-          tests: [
-            ...ok(200),
-            'pm.test("Chennai is outside the region", () => pm.expect(pm.response.json().inRegion).to.eql(false));',
-            'pm.test("no places returned", () => pm.expect(pm.response.json().count).to.eql(0));',
           ],
         }),
       ],
@@ -372,6 +374,7 @@ const collection = {
             '  const orders = b.stops.map((s) => s.order);',
             '  pm.expect(orders).to.eql([...orders].sort((a, c) => a - c));',
             '});',
+            ...NO_LOCATION,
           ],
         }),
         req('18 · Pack manifest', 'GET', '/api/trip/{{corridor}}/pack', {
