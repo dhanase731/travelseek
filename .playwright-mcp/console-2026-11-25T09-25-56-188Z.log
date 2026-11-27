@@ -1,0 +1,6 @@
+[    2343ms] [LOG] [0.038]  tgsticker init @ https://core.telegram.org/js/tgsticker.js?32:117
+[    3952ms] [LOG] [1.646]  worker #0 ready @ https://core.telegram.org/js/tgsticker.js?32:688
+[    3978ms] [LOG] [1.672]  worker #1 ready @ https://core.telegram.org/js/tgsticker.js?32:700
+[    3978ms] [LOG] [1.673]  worker #2 ready @ https://core.telegram.org/js/tgsticker.js?32:700
+[    3978ms] [LOG] [1.673]  worker #3 ready @ https://core.telegram.org/js/tgsticker.js?32:700
+[    3978ms] [LOG] [1.673]  workers ready @ https://core.telegram.org/js/tgsticker.js?32:705

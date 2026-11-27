@@ -1,0 +1,10 @@
+[     990ms] [LOG] [0.023]  tgsticker init @ https://telegram.org/js/tgsticker.js?32:117
+[   10899ms] [LOG] [9.932]  worker #0 ready @ https://telegram.org/js/tgsticker.js?32:688
+[   10927ms] [LOG] [9.961]  worker #2 ready @ https://telegram.org/js/tgsticker.js?32:700
+[   10927ms] [LOG] [9.961]  worker #3 ready @ https://telegram.org/js/tgsticker.js?32:700
+[   10927ms] [LOG] [9.961]  worker #1 ready @ https://telegram.org/js/tgsticker.js?32:700
+[   10927ms] [LOG] [9.961]  workers ready @ https://telegram.org/js/tgsticker.js?32:705
+[  138309ms] [LOG] play JSHandle@node @ https://telegram.org/js/main.js?49:452
+[  139459ms] [LOG] pause JSHandle@node @ https://telegram.org/js/main.js?49:458
+[  139542ms] [LOG] play JSHandle@node @ https://telegram.org/js/main.js?49:452
+[  139642ms] [LOG] pause JSHandle@node @ https://telegram.org/js/main.js?49:458

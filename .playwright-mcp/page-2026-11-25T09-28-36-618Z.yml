@@ -1,0 +1,282 @@
+- generic [active] [ref=f13e1]:
+  - button "Toggle light/dark theme" [ref=f13e2] [cursor=pointer]
+  - generic [ref=f13e3]:
+    - generic [ref=f13e6]:
+      - list [ref=f13e7]:
+        - listitem [ref=f13e8]:
+          - link "EN" [ref=f13e9] [cursor=pointer]:
+            - /url: "#"
+          - list:
+            - listitem:
+              - link "English":
+                - /url: "?setln=en"
+            - listitem:
+              - link "Bahasa Indonesia":
+                - /url: "?setln=id"
+            - listitem:
+              - link "Bahasa Melayu":
+                - /url: "?setln=ms"
+            - listitem:
+              - link "Deutsch":
+                - /url: "?setln=de"
+            - listitem:
+              - link "Español":
+                - /url: "?setln=es"
+            - listitem:
+              - link "Français":
+                - /url: "?setln=fr"
+            - listitem:
+              - link "Italiano":
+                - /url: "?setln=it"
+            - listitem:
+              - link "Nederlands":
+                - /url: "?setln=nl"
+            - listitem:
+              - link "O‘zbek":
+                - /url: "?setln=uz"
+            - listitem:
+              - link "Polski":
+                - /url: "?setln=pl"
+            - listitem:
+              - link "Português (Brasil)":
+                - /url: "?setln=pt-br"
+            - listitem:
+              - link "Türkçe":
+                - /url: "?setln=tr"
+            - listitem:
+              - link "Беларуская":
+                - /url: "?setln=be"
+            - listitem:
+              - link "Русский":
+                - /url: "?setln=ru"
+            - listitem:
+              - link "Українська":
+                - /url: "?setln=uk"
+            - listitem:
+              - link "Қазақша":
+                - /url: "?setln=kk"
+            - listitem:
+              - link "العربية":
+                - /url: "?setln=ar"
+            - listitem:
+              - link "فارسی":
+                - /url: "?setln=fa"
+            - listitem:
+              - link "한국어":
+                - /url: "?setln=ko"
+        - listitem [ref=f13e12]:
+          - link "Follow on X" [ref=f13e13] [cursor=pointer]:
+            - /url: https://x.com/telegram
+      - list [ref=f13e15]:
+        - listitem [ref=f13e16]:
+          - link "Home" [ref=f13e17] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f13e18]:
+          - link "FAQ" [ref=f13e19] [cursor=pointer]:
+            - /url: /faq
+        - listitem [ref=f13e20]:
+          - link "Apps" [ref=f13e21] [cursor=pointer]:
+            - /url: /apps
+        - listitem [ref=f13e22]:
+          - link "API" [ref=f13e23] [cursor=pointer]:
+            - /url: //core.telegram.org/api
+        - listitem [ref=f13e24]:
+          - link "Safety" [ref=f13e25] [cursor=pointer]:
+            - /url: /safety
+    - generic [ref=f13e27]:
+      - generic [ref=f13e28]:
+        - generic [ref=f13e30]:
+          - link "Recent News" [ref=f13e31] [cursor=pointer]:
+            - /url: /blog
+          - generic [ref=f13e32]:
+            - link "Aug 25 Welcome Messages, Buttons in Messages and Signed Gifts" [ref=f13e33] [cursor=pointer]:
+              - /url: /blog/welcome-messages-buttons-TG-13
+              - generic [ref=f13e34]: Aug 25
+              - generic [ref=f13e35]: Welcome Messages, Buttons in Messages and Signed Gifts
+            - link "Jul 14 Rich Text Editor, Communities, Ephemeral Messages in Groups, 350 Million GIFs" [ref=f13e36] [cursor=pointer]:
+              - /url: /blog/communities-editor-invisible-messages
+              - generic [ref=f13e37]: Jul 14
+              - generic [ref=f13e38]: Rich Text Editor, Communities, Ephemeral Messages in Groups, 350 Million GIFs
+            - link "Jun 11 Smartwatch Apps, Rich Text for Bots, AI Guardians for Groups, and Much More" [ref=f13e39] [cursor=pointer]:
+              - /url: /blog/watch-apps-and-more
+              - generic [ref=f13e40]: Jun 11
+              - generic [ref=f13e41]: Smartwatch Apps, Rich Text for Bots, AI Guardians for Groups, and Much More
+            - link "May 7 Guest AI Bots, Bot-to-Bot Chats, Chat Automation, Custom AI Styles, 100M+ Emoji & Sticker Search and Much More" [ref=f13e42] [cursor=pointer]:
+              - /url: /blog/ai-bot-revolution-11-new-features
+              - generic [ref=f13e43]: May 7
+              - generic [ref=f13e44]: Guest AI Bots, Bot-to-Bot Chats, Chat Automation, Custom AI Styles, 100M+ Emoji & Sticker Search and Much More
+            - link "Mar 31 AI Editor, Mighty Polls, Live Photos, Bots Managed by Bots, and More" [ref=f13e45] [cursor=pointer]:
+              - /url: /blog/ai-editor-mighty-polls-and-more
+              - generic [ref=f13e46]: Mar 31
+              - generic [ref=f13e47]: AI Editor, Mighty Polls, Live Photos, Bots Managed by Bots, and More
+            - link "Mar 1 Member Tags, Login with Telegram, Disable Sharing, GIF Editing, Date Formatting, Voting Timestamps" [ref=f13e48] [cursor=pointer]:
+              - /url: /blog/member-tags-disable-sharing-and-more
+              - generic [ref=f13e49]: Mar 1
+              - generic [ref=f13e50]: Member Tags, Login with Telegram, Disable Sharing, GIF Editing, Date Formatting, Voting Timestamps
+            - link "Feb 9 Android Redesign, Group Ownership Transfer, Gift Crafting, Colored Bot Buttons" [ref=f13e51] [cursor=pointer]:
+              - /url: /blog/crafting-android-design-and-more
+              - generic [ref=f13e52]: Feb 9
+              - generic [ref=f13e53]: Android Redesign, Group Ownership Transfer, Gift Crafting, Colored Bot Buttons
+        - generic [ref=f13e54]:
+          - heading "Live Locations, Media Player and Languages" [level=1] [ref=f13e56]
+          - generic [ref=f13e57]:
+            - link [ref=f13e60] [cursor=pointer]:
+              - /url: /file/811140800/15ac/dbUnAN7v3is.132207/89052c9f12dbb51f7b
+              - img "Meet Telegram 4.4! Live Locations, Media Player and More Languages" [ref=f13e61]
+            - paragraph [ref=f13e62]:
+              - text: Starting with
+              - strong [ref=f13e63]: Telegram 4.4
+              - text: ", you can broadcast your current location to any chat in real time."
+            - paragraph [ref=f13e64]:
+              - text: This is useful when you are on your way to an appointment or are trying to coordinate with friends at a large event. Instead of sending static locations on the map every minute, you can now share your
+              - strong [ref=f13e65]: Live Location
+              - text: with the people you’re meeting – for
+              - strong [ref=f13e66]: "15"
+              - text: minutes,
+              - strong [ref=f13e67]: "1"
+              - text: hour, or
+              - strong [ref=f13e68]: "8"
+              - text: hours.
+            - paragraph [ref=f13e69]: "To use this feature, select ‘Location’ from the attachment menu and choose ‘Share My Location for…’:"
+            - generic [ref=f13e72] [cursor=pointer]
+            - paragraph [ref=f13e73]: You can also share your Live Location in groups, and if other members of the group do the same, you’ll get an interactive map of everyone’s current coordinates. Thanks to a bar at the top of the screen, you will always remember who you’re sharing your location with. And you only need two taps to stop sharing whenever you choose to.
+            - heading "New Media Player" [level=3] [ref=f13e74]:
+              - link [ref=f13e75]:
+                - /url: "#new-media-player"
+                - generic [ref=f13e76] [cursor=pointer]
+              - text: New Media Player
+            - paragraph [ref=f13e77]:
+              - text: We’ve completely redesigned our in-app audio player to better support the playback of MP3s and other music files you send and receive. Try the
+              - link "@cctracks" [ref=f13e78] [cursor=pointer]:
+                - /url: https://t.me/cctracks
+              - text: channel for a demo – we’ve uploaded some free music there to demonstrate how the new media player works. After downloading an audio file, tap the play button to start listening. To view the cover image and the rest of the chat's playlist, tap on the title of the playing track in the top bar.
+            - generic [ref=f13e81] [cursor=pointer]
+            - heading "More Languages" [level=3] [ref=f13e82]:
+              - link [ref=f13e83]:
+                - /url: "#more-languages"
+                - generic [ref=f13e84] [cursor=pointer]
+              - text: More Languages
+            - paragraph [ref=f13e85]:
+              - text: We’re also launching a new
+              - link "translation platform" [ref=f13e86] [cursor=pointer]:
+                - /url: https://translations.telegram.org
+              - text: for Telegram apps. Starting today, Telegram is available in French, Indonesian, Malay, Russian and Ukrainian – with more languages like Persian coming soon. Telegram now supports 13 languages, which are available in Settings.
+            - paragraph [ref=f13e87]:
+              - text: If you don’t like how a specific element in Telegram's interface is translated in your language, you can now use the
+              - link "localization platform" [ref=f13e88] [cursor=pointer]:
+                - /url: https://translations.telegram.org
+              - text: to suggest an alternative word or phrase. Everyone can suggest translations and vote for them, making Telegram localization a community-driven effort.
+            - generic [ref=f13e89]:
+              - link [ref=f13e90] [cursor=pointer]:
+                - /url: /file/811140498/18bc/jBRVpju9nLM.42250/7b13fd34bd9622a5e6
+                - img "New Localization Platform for Telegram Apps" [ref=f13e91]
+              - paragraph [ref=f13e92]: Screenshots make translations easier
+            - paragraph [ref=f13e93]: Unlike other services, Telegram can instantly push new translations of words and phrases to the apps. Thanks to this, users won't need to wait for an update in the stores to get the new localized version.
+            - paragraph [ref=f13e94]: This also means that our developers won't have to wait for all translations to be finished before the apps are released, so this new interface will speed up Telegram development too.
+            - heading "Better Group Chats" [level=3] [ref=f13e95]:
+              - link [ref=f13e96]:
+                - /url: "#better-group-chats"
+                - generic [ref=f13e97] [cursor=pointer]
+              - text: Better Group Chats
+            - paragraph [ref=f13e98]: As always, we’re trying to make Telegram group chats better. In large groups, you can now recognize messages from admins by the new ‘admin’ badge. And Admins in supergroups can now control whether new members get to see the earlier message history.
+            - paragraph [ref=f13e100]:
+              - emphasis [ref=f13e101]: October 10, 2017The Telegram Team
+        - generic [ref=f13e102]:
+          - link "Forward" [ref=f13e103] [cursor=pointer]:
+            - /url: https://t.me/share/url?url=https%3A%2F%2Ftelegram.org%2Fblog%2Flive-locations&text=Meet%20Telegram%204.4%3A%20Live%20Locations%2C%20the%20New%20Media%20Player%20and%20Localization%20Platform
+          - link "Tweet" [ref=f13e106] [cursor=pointer]:
+            - /url: https://twitter.com/intent/tweet?text=Meet%20Telegram%204.4%3A%20Live%20Locations%2C%20the%20New%20Media%20Player%20and%20Localization%20Platform&url=https%3A%2F%2Ftelegram.org%2Fblog%2Flive-locations&via=Telegram
+      - generic [ref=f13e107]:
+        - heading [level=3] [ref=f13e108]:
+          - link "Other News" [ref=f13e109] [cursor=pointer]:
+            - /url: /blog
+        - generic [ref=f13e110]:
+          - link "Welcome Messages, Buttons in Messages and Signed Gifts Introducing Welcome Messages to greet new members of groups or channels, Buttons in Messages to make any text interactive, Inline Documents… Aug 25, 2026" [ref=f13e111] [cursor=pointer]:
+            - /url: /blog/welcome-messages-buttons-TG-13
+            - generic [ref=f13e112]:
+              - generic [ref=f13e114]:
+                - heading "Welcome Messages, Buttons in Messages and Signed Gifts" [level=4] [ref=f13e115]
+                - generic [ref=f13e116]: Introducing Welcome Messages to greet new members of groups or channels, Buttons in Messages to make any text interactive, Inline Documents…
+              - generic [ref=f13e117]: Aug 25, 2026
+          - link "Rich Text Editor, Communities, Ephemeral Messages in Groups, 350 Million GIFs Introducing a rich text editor to format and generate text, Telegram Communities linking together several groups, channels and bots, ephemeral… Jul 14, 2026" [ref=f13e118] [cursor=pointer]:
+            - /url: /blog/communities-editor-invisible-messages
+            - generic [ref=f13e119]:
+              - generic [ref=f13e121]:
+                - heading "Rich Text Editor, Communities, Ephemeral Messages in Groups, 350 Million GIFs" [level=4] [ref=f13e122]
+                - generic [ref=f13e123]: Introducing a rich text editor to format and generate text, Telegram Communities linking together several groups, channels and bots, ephemeral…
+              - generic [ref=f13e124]: Jul 14, 2026
+          - link "Smartwatch Apps, Rich Text for Bots, AI Guardians for Groups, and Much More Today’s update brings Telegram to Apple Watch and Android smartwatches, adds filthy rich text for bots, lets AI admins screen new group… Jun 11, 2026" [ref=f13e125] [cursor=pointer]:
+            - /url: /blog/watch-apps-and-more
+            - generic [ref=f13e126]:
+              - generic [ref=f13e128]:
+                - heading "Smartwatch Apps, Rich Text for Bots, AI Guardians for Groups, and Much More" [level=4] [ref=f13e129]
+                - generic [ref=f13e130]: Today’s update brings Telegram to Apple Watch and Android smartwatches, adds filthy rich text for bots, lets AI admins screen new group…
+              - generic [ref=f13e131]: Jun 11, 2026
+          - link "Guest AI Bots, Bot-to-Bot Chats, Chat Automation, Custom AI Styles, 100M+ Emoji & Sticker Search and Much More Telegram adds over 10 new features, including ways for users to access AI services from any… May 7, 2026" [ref=f13e132] [cursor=pointer]:
+            - /url: /blog/ai-bot-revolution-11-new-features
+            - generic [ref=f13e133]:
+              - generic [ref=f13e135]:
+                - heading "Guest AI Bots, Bot-to-Bot Chats, Chat Automation, Custom AI Styles, 100M+ Emoji & Sticker Search and Much More" [level=4] [ref=f13e136]
+                - generic [ref=f13e137]: Telegram adds over 10 new features, including ways for users to access AI services from any…
+              - generic [ref=f13e138]: May 7, 2026
+  - generic [ref=f13e140]:
+    - generic [ref=f13e141]:
+      - heading "Telegram" [level=5] [ref=f13e142]
+      - text: Telegram is a cloud-based mobile and desktop messaging app with a focus on security and speed.
+    - generic [ref=f13e143]:
+      - heading [level=5] [ref=f13e144]:
+        - link "About" [ref=f13e145] [cursor=pointer]:
+          - /url: /faq
+      - list [ref=f13e146]:
+        - listitem [ref=f13e147]:
+          - link "FAQ" [ref=f13e148] [cursor=pointer]:
+            - /url: /faq
+        - listitem [ref=f13e149]:
+          - link "Privacy" [ref=f13e150] [cursor=pointer]:
+            - /url: /privacy
+        - listitem [ref=f13e151]:
+          - link "Press" [ref=f13e152] [cursor=pointer]:
+            - /url: /press
+    - generic [ref=f13e153]:
+      - heading [level=5] [ref=f13e154]:
+        - link "Mobile Apps" [ref=f13e155] [cursor=pointer]:
+          - /url: /apps#mobile-apps
+      - list [ref=f13e156]:
+        - listitem [ref=f13e157]:
+          - link "iPhone/iPad" [ref=f13e158] [cursor=pointer]:
+            - /url: /dl/ios
+        - listitem [ref=f13e159]:
+          - link "Android" [ref=f13e160] [cursor=pointer]:
+            - /url: /android
+        - listitem [ref=f13e161]:
+          - link "Mobile Web" [ref=f13e162] [cursor=pointer]:
+            - /url: /dl/web
+    - generic [ref=f13e163]:
+      - heading [level=5] [ref=f13e164]:
+        - link "Desktop Apps" [ref=f13e165] [cursor=pointer]:
+          - /url: /apps#desktop-apps
+      - list [ref=f13e166]:
+        - listitem [ref=f13e167]:
+          - link "PC/Mac/Linux" [ref=f13e168] [cursor=pointer]:
+            - /url: //desktop.telegram.org/
+        - listitem [ref=f13e169]:
+          - link "macOS" [ref=f13e170] [cursor=pointer]:
+            - /url: //macos.telegram.org/
+        - listitem [ref=f13e171]:
+          - link "Web-browser" [ref=f13e172] [cursor=pointer]:
+            - /url: /dl/web
+    - generic [ref=f13e173]:
+      - heading [level=5] [ref=f13e174]:
+        - link "Platform" [ref=f13e175] [cursor=pointer]:
+          - /url: //core.telegram.org/
+      - list [ref=f13e176]:
+        - listitem [ref=f13e177]:
+          - link "API" [ref=f13e178] [cursor=pointer]:
+            - /url: //core.telegram.org/api
+        - listitem [ref=f13e179]:
+          - link "Translations" [ref=f13e180] [cursor=pointer]:
+            - /url: //translations.telegram.org/
+        - listitem [ref=f13e181]:
+          - link "Instant View" [ref=f13e182] [cursor=pointer]:
+            - /url: //instantview.telegram.org/
+  - generic: Go up

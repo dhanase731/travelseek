@@ -1,0 +1,44 @@
+[Skip to content](https://docs.protomaps.com/basemaps/downloads#VPContent)
+
+On this page
+
+# Basemap Downloads [​](https://docs.protomaps.com/basemaps/downloads\#basemap-downloads)
+
+## Intro [​](https://docs.protomaps.com/basemaps/downloads\#intro)
+
+The **Protomaps Basemap** is a general purpose vector _base map_ \- city labels, roads, water features and other essential location context derived from [OpenStreetMap](https://openstreetmap.org/). It's available as a single PMTiles archive, distributed as an [Open Database License](https://opendatacommons.org/licenses/odbl/) Produced Work (OpenStreetMap attribution required)
+
+A full planet file is roughly **120 gigabytes**, including zoom levels from 0 to 15.
+
+Please note that **URLs may change** and hotlinking to these downloads are discouraged. Instead, you should copy the tileset to your own [Cloud Storage](https://docs.protomaps.com/pmtiles/cloud-storage).
+
+- The generation of the planet basemap is open source at [github.com/protomaps/basemaps](http://github.com/protomaps/basemaps).
+
+## Current Version [​](https://docs.protomaps.com/basemaps/downloads\#current-version)
+
+The Version 4 Protomaps basemap daily build channel is available at [maps.protomaps.com/builds](https://maps.protomaps.com/builds). This is compatible with `@protomaps/basemaps` style v4.0.0 and newer.
+
+[BLAKE3](https://github.com/BLAKE3-team/BLAKE3/releases/) hashes are provided for daily builds. Use `b3sum` to verify the integrity of your downloaded file.
+
+A mirror in the AWS `us-west-2` is available on [Source Cooperative](https://source.coop/) at the [protomaps/openstreetmap](https://source.coop/protomaps/openstreetmap) repository. This mirrors an older build.
+
+### Build History [​](https://docs.protomaps.com/basemaps/downloads\#build-history)
+
+The daily builds bucket retains:
+
+- All builds for the past week.
+- The latest build for each patch version (e.g. `4.3.0`).
+
+## Partial Downloads [​](https://docs.protomaps.com/basemaps/downloads\#partial-downloads)
+
+To download a cutout of a specific region, rather than the entire world map, see the CLI's [extract command](https://docs.protomaps.com/pmtiles/cli#extract).
+
+If you don't need all 16 zoom levels of detail, use the `--maxzoom` option of `pmtiles extract`. Each additional zoom level roughly doubles the size of the file.
+
+## Terrain [​](https://docs.protomaps.com/basemaps/downloads\#terrain)
+
+### Mapterhorn [​](https://docs.protomaps.com/basemaps/downloads\#mapterhorn)
+
+The [Mapterhorn](http://mapterhorn.com/) project distributes Terrarium-encoded RGB tiles aggregated from multiple global data sources in PMTiles format. Download the full `.pmtiles` or get a partial download with `pmtiles extract` at the [Mapterhorn Data Access documentation](https://mapterhorn.com/data-access/).
+
+[planet.pmtiles](https://download.mapterhorn.com/planet.pmtiles) [(preview)](https://pmtiles.io/#url=https%3A%2F%2Fdownload.mapterhorn.com%2Fplanet.pmtiles&map=0.6/0/0)

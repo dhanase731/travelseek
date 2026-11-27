@@ -1,0 +1,270 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - button "Guide" [active] [ref=e9] [cursor=pointer]
+          - generic [ref=e13]:
+            - link "YouTube Home" [ref=e14] [cursor=pointer]:
+              - /url: /
+            - generic [ref=e20]: IN
+          - button "Skip navigation" [ref=e24] [cursor=pointer]
+        - generic [ref=e28]:
+          - search [ref=e29]:
+            - generic [ref=e31]:
+              - generic [ref=e32]:
+                - combobox "Search" [ref=e34]: DSA
+                - button "Clear search query" [ref=e103] [cursor=pointer]
+              - button "Search" [ref=e35] [cursor=pointer]
+          - generic [ref=e40]:
+            - button "Search with your voice" [ref=e42] [cursor=pointer]
+            - tooltip "tooltip"
+        - generic [ref=e47]:
+          - button "Settings" [ref=e52] [cursor=pointer]
+          - link "Sign in" [ref=e58] [cursor=pointer]:
+            - /url: https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fresults%253Fsearch_query%253DDSA&hl=en&ec=65620
+    - navigation [ref=e62]:
+      - generic [ref=e63]:
+        - link "Home" [ref=e65] [cursor=pointer]:
+          - /url: /
+        - link "Shorts" [ref=e71] [cursor=pointer]:
+          - /url: /shorts/
+        - link "Subscriptions" [ref=e77] [cursor=pointer]:
+          - /url: /feed/subscriptions
+        - link "You" [ref=e83] [cursor=pointer]:
+          - /url: /feed/you
+    - generic [ref=e88]:
+      - text: •
+      - main [ref=e111]:
+        - generic [ref=e112]:
+          - generic [ref=e114]:
+            - tablist [ref=e119]:
+              - tab "All" [selected] [ref=e122] [cursor=pointer]
+              - tab "Shorts" [ref=e127] [cursor=pointer]
+              - tab "Unwatched" [ref=e132] [cursor=pointer]
+              - tab "Videos" [ref=e137] [cursor=pointer]
+              - tab "Recently uploaded" [ref=e142] [cursor=pointer]
+              - tab "Live" [ref=e147] [cursor=pointer]
+            - generic [ref=e151]:
+              - button "Search filters" [ref=e153] [cursor=pointer]:
+                - generic: Filters
+              - tooltip "tooltip"
+          - generic [ref=e162]:
+            - generic [ref=e171] [cursor=pointer]:
+              - link [aria-hidden] [ref=e172]:
+                - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CBBwQhPkHa9_SL4KBrtoP_-uI6AWTn8_4igHit9OywhZkEAEgAGDlkuiD2A6CARdjYS1wdWItNjIxOTgxMTc0NzA0OTM3MaAB_p6k6ESoAwSqBJcCT9ANy3DI_W57gvI6_4sqnjNQ3x8gXYWBoBpdEg6yGjZX3RARG_yAHSUggYoJeUK2_W0PP5EUHtS8t_m0DQN285UI3D6uAXfw5fIW_A9ua-OIDc8ySltq5ZVgKkTJgOPRo2_UZjV8WkYc3PwwnxCZoV3Lnt5BArwPKmbxvr73153liM2WYWnfm51fiBS2V8KgGQht1S-dBvxJFZoh2mEiUDiifps71jXSW7B3OAdhkdaxL2V3eNwfe9BAHzYTQ_iIJLFZAfHZKM-aRcnVfjsO8vrCa-Y4SasZ2IVyVUDD4MivK013aYd6xSyK4v_GBnLbwunH7cWbYtteX8Via1G8qINlrRvlN8usLebVVmTXLf9CAW7R6d0diAWu5vmOW5IFDAgSMKj1o9HOy4y0RJIFCAgTeJvSmfMfoAZVgAepz-_IH5AHBKgHpc-xAqgH552xAqgH6J2xAqgHg_axAqgH-dOxAqgHydqxAqgHqeCxAqgHqNIbqAex3BuoB7CbsQKoB_2ysQKoB8jPsQKoB8nPsQKoB_zVsQKoB_vVsQKoB4zWsQKoB4vWsQKoB5risQKoB5visQKoB57qsQKoB5_qsQKoB7rwsQKoB_jrsQKoB7zqsQKoB-_xsQKoB_yvsQKoB9XOG6gHvtmxAqgHv9mxAqgHlQioB5zcG6gHt6GxAqgH1amxAqgH59qxAqgH3rWxAqgH6rGxAqgHvrexAqgHmbWxAqgHhcGxAqgH66WxAqgHyqmxApIIC1JHZ3lYT29vLXFnqAgB0gguCIBBEAEYXjICggI6D4BCgMCAgICAgIACqoCAGEjZoNI1UBRYkJDp-KalmANgAZoJG2h0dHBzOi8vYW50aWdyYXZpdHkuZ29vZ2xlL7EJV9dcr77hox7ICRfICY8ByAmQAcgJwgG6CzoIAxAFGBYgBygBMBxAAUgAWH1gAGgAcAGIAQCYAQGiAQgKAKgCAdgCAtgBBoACAYgCBboDBXZpc2lu0AsS4AsBogwsaiUKI2NvbS5nb29nbGUuYW5kcm9pZC5hcHBzLmFudGlncmF2aXR5eACIAQDSDAIQAdoMJQoKEKDfhenlr8SiJhICAQMaDRiu5vmOWyCRmYC66AVAAUoCEB-aDQESqg0CSU7IDQHSDb0CaHR0cHM6Ly9hZC5kb3VibGVjbGljay5uZXQvc2VhcmNoYWRzL2xpbmsvY2xpY2s_bGlkPTU4NzAwMDA5MTUzMzA2NzI3JmRzX2FfY2lkPTg1NjMwOTE3MzkmZHNfYV9jYWlkPTI0NDQ3OTAxODA5JmRzX2FfYWdpZD0mZHNfYV9maWlkPSZkc19hX2xpZD0mZHNfYV9leHRpZD0mJmRzX2VfYWRpZD0mZHNfZV9tYXRjaHR5cGU9JmRzX2VfZGV2aWNlPWMmZHNfZV9uZXR3b3JrPXgmJmRzX3VybF92PTImZHNfZGVzdF91cmw9aHR0cHM6Ly9hbnRpZ3Jhdml0eS5nb29nbGUvP2djbHNyYz1hdy5kcyZnYWRfc291cmNlPTImZ2FkX2NhbXBhaWduaWQ9MjQ0NTg5ODIxOTCwDr3N_pwZuBP___________8BiBQBsBQDwBWBgIBA0BUB2BUBmBYB4hYCCAGAFwGKFxgIAxgBIAEoATABOAFAAUgBUAFYAWACaAGgFwGpFxnZ8K64a5FmuhcGKAAwADgB0BgB8BgBwhkCCAE&ase=2&gclid=EAIaIQobChMI36Tp-KalmAMVgoBLBR3_NQJdEAEYASAAEgK-n_D_BwE&num=1&cid=CAASwgHkaGiYN5yzkZdX7aXnz847fLmlWv5tYbYf3_-QCp3PPMsAXFW6dTyigebjY2AV690YByqn1tBs9vsrDaVmhpXa7NSb0RmGaaRzpXrgv78AeuDUsNpMNTr42b2JSn-oI9p5ujQAa9wJ5QOy5HskBAm-7VrkRbkPR0qQM33EgRf4H5J5r5a-A3pGx-hKhQc2ESmLErFifHcXkis7lvLWt2Rmr3H4a1NZMo4Ze8aHLASxslmhXpCM25On9Et7Pfuw4a8VxQ&ad_cpn=%5BCPN%5D&sig=AOD64_3j1TyzFhnDjqFlpxZe6s64IqFSXQ&ctype=110&video_id=RGgyXOoo-qg&label=video_click_to_advertiser_site&ms=%5BCLICK_MS%5D
+                - button [aria-hidden] [ref=e178]
+              - generic [ref=e182]:
+                - generic [ref=e183]:
+                  - generic [ref=e184]:
+                    - link "A next-gen agentic coding platform designed to accelerate how you plan, test, and ship." [ref=e187]:
+                      - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CBBwQhPkHa9_SL4KBrtoP_-uI6AWTn8_4igHit9OywhZkEAEgAGDlkuiD2A6CARdjYS1wdWItNjIxOTgxMTc0NzA0OTM3MaAB_p6k6ESoAwSqBJcCT9ANy3DI_W57gvI6_4sqnjNQ3x8gXYWBoBpdEg6yGjZX3RARG_yAHSUggYoJeUK2_W0PP5EUHtS8t_m0DQN285UI3D6uAXfw5fIW_A9ua-OIDc8ySltq5ZVgKkTJgOPRo2_UZjV8WkYc3PwwnxCZoV3Lnt5BArwPKmbxvr73153liM2WYWnfm51fiBS2V8KgGQht1S-dBvxJFZoh2mEiUDiifps71jXSW7B3OAdhkdaxL2V3eNwfe9BAHzYTQ_iIJLFZAfHZKM-aRcnVfjsO8vrCa-Y4SasZ2IVyVUDD4MivK013aYd6xSyK4v_GBnLbwunH7cWbYtteX8Via1G8qINlrRvlN8usLebVVmTXLf9CAW7R6d0diAWu5vmOW5IFDAgSMKj1o9HOy4y0RJIFCAgTeJvSmfMfoAZVgAepz-_IH5AHBKgHpc-xAqgH552xAqgH6J2xAqgHg_axAqgH-dOxAqgHydqxAqgHqeCxAqgHqNIbqAex3BuoB7CbsQKoB_2ysQKoB8jPsQKoB8nPsQKoB_zVsQKoB_vVsQKoB4zWsQKoB4vWsQKoB5risQKoB5visQKoB57qsQKoB5_qsQKoB7rwsQKoB_jrsQKoB7zqsQKoB-_xsQKoB_yvsQKoB9XOG6gHvtmxAqgHv9mxAqgHlQioB5zcG6gHt6GxAqgH1amxAqgH59qxAqgH3rWxAqgH6rGxAqgHvrexAqgHmbWxAqgHhcGxAqgH66WxAqgHyqmxApIIC1JHZ3lYT29vLXFnqAgB0gguCIBBEAEYXjICggI6D4BCgMCAgICAgIACqoCAGEjZoNI1UBRYkJDp-KalmANgAZoJG2h0dHBzOi8vYW50aWdyYXZpdHkuZ29vZ2xlL7EJV9dcr77hox7ICRfICY8ByAmQAcgJwgG6CzoIAxAFGBYgBygBMBxAAUgAWH1gAGgAcAGIAQCYAQGiAQgKAKgCAdgCAtgBBoACAYgCBboDBXZpc2lu0AsS4AsBogwsaiUKI2NvbS5nb29nbGUuYW5kcm9pZC5hcHBzLmFudGlncmF2aXR5eACIAQDSDAIQAdoMJQoKEKDfhenlr8SiJhICAQMaDRiu5vmOWyCRmYC66AVAAUoCEB-aDQESqg0CSU7IDQHSDb0CaHR0cHM6Ly9hZC5kb3VibGVjbGljay5uZXQvc2VhcmNoYWRzL2xpbmsvY2xpY2s_bGlkPTU4NzAwMDA5MTUzMzA2NzI3JmRzX2FfY2lkPTg1NjMwOTE3MzkmZHNfYV9jYWlkPTI0NDQ3OTAxODA5JmRzX2FfYWdpZD0mZHNfYV9maWlkPSZkc19hX2xpZD0mZHNfYV9leHRpZD0mJmRzX2VfYWRpZD0mZHNfZV9tYXRjaHR5cGU9JmRzX2VfZGV2aWNlPWMmZHNfZV9uZXR3b3JrPXgmJmRzX3VybF92PTImZHNfZGVzdF91cmw9aHR0cHM6Ly9hbnRpZ3Jhdml0eS5nb29nbGUvP2djbHNyYz1hdy5kcyZnYWRfc291cmNlPTImZ2FkX2NhbXBhaWduaWQ9MjQ0NTg5ODIxOTCwDr3N_pwZuBP___________8BiBQBsBQDwBWBgIBA0BUB2BUBmBYB4hYCCAGAFwGKFxgIAxgBIAEoATABOAFAAUgBUAFYAWACaAGgFwGpFxnZ8K64a5FmuhcGKAAwADgB0BgB8BgBwhkCCAE&ase=2&gclid=EAIaIQobChMI36Tp-KalmAMVgoBLBR3_NQJdEAEYASAAEgK-n_D_BwE&num=1&cid=CAASwgHkaGiYN5yzkZdX7aXnz847fLmlWv5tYbYf3_-QCp3PPMsAXFW6dTyigebjY2AV690YByqn1tBs9vsrDaVmhpXa7NSb0RmGaaRzpXrgv78AeuDUsNpMNTr42b2JSn-oI9p5ujQAa9wJ5QOy5HskBAm-7VrkRbkPR0qQM33EgRf4H5J5r5a-A3pGx-hKhQc2ESmLErFifHcXkis7lvLWt2Rmr3H4a1NZMo4Ze8aHLASxslmhXpCM25On9Et7Pfuw4a8VxQ&ad_cpn=%5BCPN%5D&sig=AOD64_3j1TyzFhnDjqFlpxZe6s64IqFSXQ&ctype=110&video_id=RGgyXOoo-qg&label=video_click_to_advertiser_site&ms=%5BCLICK_MS%5D
+                    - link "Our latest models, autonomous agents, and tools for the hardest builds." [ref=e190]:
+                      - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CBBwQhPkHa9_SL4KBrtoP_-uI6AWTn8_4igHit9OywhZkEAEgAGDlkuiD2A6CARdjYS1wdWItNjIxOTgxMTc0NzA0OTM3MaAB_p6k6ESoAwSqBJcCT9ANy3DI_W57gvI6_4sqnjNQ3x8gXYWBoBpdEg6yGjZX3RARG_yAHSUggYoJeUK2_W0PP5EUHtS8t_m0DQN285UI3D6uAXfw5fIW_A9ua-OIDc8ySltq5ZVgKkTJgOPRo2_UZjV8WkYc3PwwnxCZoV3Lnt5BArwPKmbxvr73153liM2WYWnfm51fiBS2V8KgGQht1S-dBvxJFZoh2mEiUDiifps71jXSW7B3OAdhkdaxL2V3eNwfe9BAHzYTQ_iIJLFZAfHZKM-aRcnVfjsO8vrCa-Y4SasZ2IVyVUDD4MivK013aYd6xSyK4v_GBnLbwunH7cWbYtteX8Via1G8qINlrRvlN8usLebVVmTXLf9CAW7R6d0diAWu5vmOW5IFDAgSMKj1o9HOy4y0RJIFCAgTeJvSmfMfoAZVgAepz-_IH5AHBKgHpc-xAqgH552xAqgH6J2xAqgHg_axAqgH-dOxAqgHydqxAqgHqeCxAqgHqNIbqAex3BuoB7CbsQKoB_2ysQKoB8jPsQKoB8nPsQKoB_zVsQKoB_vVsQKoB4zWsQKoB4vWsQKoB5risQKoB5visQKoB57qsQKoB5_qsQKoB7rwsQKoB_jrsQKoB7zqsQKoB-_xsQKoB_yvsQKoB9XOG6gHvtmxAqgHv9mxAqgHlQioB5zcG6gHt6GxAqgH1amxAqgH59qxAqgH3rWxAqgH6rGxAqgHvrexAqgHmbWxAqgHhcGxAqgH66WxAqgHyqmxApIIC1JHZ3lYT29vLXFnqAgB0gguCIBBEAEYXjICggI6D4BCgMCAgICAgIACqoCAGEjZoNI1UBRYkJDp-KalmANgAZoJG2h0dHBzOi8vYW50aWdyYXZpdHkuZ29vZ2xlL7EJV9dcr77hox7ICRfICY8ByAmQAcgJwgG6CzoIAxAFGBYgBygBMBxAAUgAWH1gAGgAcAGIAQCYAQGiAQgKAKgCAdgCAtgBBoACAYgCBboDBXZpc2lu0AsS4AsBogwsaiUKI2NvbS5nb29nbGUuYW5kcm9pZC5hcHBzLmFudGlncmF2aXR5eACIAQDSDAIQAdoMJQoKEKDfhenlr8SiJhICAQMaDRiu5vmOWyCRmYC66AVAAUoCEB-aDQESqg0CSU7IDQHSDb0CaHR0cHM6Ly9hZC5kb3VibGVjbGljay5uZXQvc2VhcmNoYWRzL2xpbmsvY2xpY2s_bGlkPTU4NzAwMDA5MTUzMzA2NzI3JmRzX2FfY2lkPTg1NjMwOTE3MzkmZHNfYV9jYWlkPTI0NDQ3OTAxODA5JmRzX2FfYWdpZD0mZHNfYV9maWlkPSZkc19hX2xpZD0mZHNfYV9leHRpZD0mJmRzX2VfYWRpZD0mZHNfZV9tYXRjaHR5cGU9JmRzX2VfZGV2aWNlPWMmZHNfZV9uZXR3b3JrPXgmJmRzX3VybF92PTImZHNfZGVzdF91cmw9aHR0cHM6Ly9hbnRpZ3Jhdml0eS5nb29nbGUvP2djbHNyYz1hdy5kcyZnYWRfc291cmNlPTImZ2FkX2NhbXBhaWduaWQ9MjQ0NTg5ODIxOTCwDr3N_pwZuBP___________8BiBQBsBQDwBWBgIBA0BUB2BUBmBYB4hYCCAGAFwGKFxgIAxgBIAEoATABOAFAAUgBUAFYAWACaAGgFwGpFxnZ8K64a5FmuhcGKAAwADgB0BgB8BgBwhkCCAE&ase=2&gclid=EAIaIQobChMI36Tp-KalmAMVgoBLBR3_NQJdEAEYASAAEgK-n_D_BwE&num=1&cid=CAASwgHkaGiYN5yzkZdX7aXnz847fLmlWv5tYbYf3_-QCp3PPMsAXFW6dTyigebjY2AV690YByqn1tBs9vsrDaVmhpXa7NSb0RmGaaRzpXrgv78AeuDUsNpMNTr42b2JSn-oI9p5ujQAa9wJ5QOy5HskBAm-7VrkRbkPR0qQM33EgRf4H5J5r5a-A3pGx-hKhQc2ESmLErFifHcXkis7lvLWt2Rmr3H4a1NZMo4Ze8aHLASxslmhXpCM25On9Et7Pfuw4a8VxQ&ad_cpn=%5BCPN%5D&sig=AOD64_3j1TyzFhnDjqFlpxZe6s64IqFSXQ&ctype=110&video_id=RGgyXOoo-qg&label=video_click_to_advertiser_site&ms=%5BCLICK_MS%5D
+                    - generic [ref=e191]:
+                      - button "Google Antigravity" [ref=e195]
+                      - generic [ref=e199]:
+                        - generic [ref=e200]: Sponsored
+                        - text: ·
+                      - generic [ref=e201]: Google Antigravity
+                  - button "My Ad Center" [ref=e205]
+                - generic [ref=e211]:
+                  - link "Watch" [ref=e214]:
+                    - /url: /watch?v=RGgyXOoo-qg
+                  - link "Learn more" [ref=e220]:
+                    - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CBBwQhPkHa9_SL4KBrtoP_-uI6AWTn8_4igHit9OywhZkEAEgAGDlkuiD2A6CARdjYS1wdWItNjIxOTgxMTc0NzA0OTM3MaAB_p6k6ESoAwSqBJcCT9ANy3DI_W57gvI6_4sqnjNQ3x8gXYWBoBpdEg6yGjZX3RARG_yAHSUggYoJeUK2_W0PP5EUHtS8t_m0DQN285UI3D6uAXfw5fIW_A9ua-OIDc8ySltq5ZVgKkTJgOPRo2_UZjV8WkYc3PwwnxCZoV3Lnt5BArwPKmbxvr73153liM2WYWnfm51fiBS2V8KgGQht1S-dBvxJFZoh2mEiUDiifps71jXSW7B3OAdhkdaxL2V3eNwfe9BAHzYTQ_iIJLFZAfHZKM-aRcnVfjsO8vrCa-Y4SasZ2IVyVUDD4MivK013aYd6xSyK4v_GBnLbwunH7cWbYtteX8Via1G8qINlrRvlN8usLebVVmTXLf9CAW7R6d0diAWu5vmOW5IFDAgSMKj1o9HOy4y0RJIFCAgTeJvSmfMfoAZVgAepz-_IH5AHBKgHpc-xAqgH552xAqgH6J2xAqgHg_axAqgH-dOxAqgHydqxAqgHqeCxAqgHqNIbqAex3BuoB7CbsQKoB_2ysQKoB8jPsQKoB8nPsQKoB_zVsQKoB_vVsQKoB4zWsQKoB4vWsQKoB5risQKoB5visQKoB57qsQKoB5_qsQKoB7rwsQKoB_jrsQKoB7zqsQKoB-_xsQKoB_yvsQKoB9XOG6gHvtmxAqgHv9mxAqgHlQioB5zcG6gHt6GxAqgH1amxAqgH59qxAqgH3rWxAqgH6rGxAqgHvrexAqgHmbWxAqgHhcGxAqgH66WxAqgHyqmxApIIC1JHZ3lYT29vLXFnqAgB0gguCIBBEAEYXjICggI6D4BCgMCAgICAgIACqoCAGEjZoNI1UBRYkJDp-KalmANgAZoJG2h0dHBzOi8vYW50aWdyYXZpdHkuZ29vZ2xlL7EJV9dcr77hox7ICRfICY8ByAmQAcgJwgG6CzoIAxAFGBYgBygBMBxAAUgAWH1gAGgAcAGIAQCYAQGiAQgKAKgCAdgCAtgBBoACAYgCBboDBXZpc2lu0AsS4AsBogwsaiUKI2NvbS5nb29nbGUuYW5kcm9pZC5hcHBzLmFudGlncmF2aXR5eACIAQDSDAIQAdoMJQoKEKDfhenlr8SiJhICAQMaDRiu5vmOWyCRmYC66AVAAUoCEB-aDQESqg0CSU7IDQHSDb0CaHR0cHM6Ly9hZC5kb3VibGVjbGljay5uZXQvc2VhcmNoYWRzL2xpbmsvY2xpY2s_bGlkPTU4NzAwMDA5MTUzMzA2NzI3JmRzX2FfY2lkPTg1NjMwOTE3MzkmZHNfYV9jYWlkPTI0NDQ3OTAxODA5JmRzX2FfYWdpZD0mZHNfYV9maWlkPSZkc19hX2xpZD0mZHNfYV9leHRpZD0mJmRzX2VfYWRpZD0mZHNfZV9tYXRjaHR5cGU9JmRzX2VfZGV2aWNlPWMmZHNfZV9uZXR3b3JrPXgmJmRzX3VybF92PTImZHNfZGVzdF91cmw9aHR0cHM6Ly9hbnRpZ3Jhdml0eS5nb29nbGUvP2djbHNyYz1hdy5kcyZnYWRfc291cmNlPTImZ2FkX2NhbXBhaWduaWQ9MjQ0NTg5ODIxOTCwDr3N_pwZuBP___________8BiBQBsBQDwBWBgIBA0BUB2BUBmBYB4hYCCAGAFwGKFxgIAxgBIAEoATABOAFAAUgBUAFYAWACaAGgFwGpFxnZ8K64a5FmuhcGKAAwADgB0BgB8BgBwhkCCAE&ase=2&gclid=EAIaIQobChMI36Tp-KalmAMVgoBLBR3_NQJdEAEYASAAEgK-n_D_BwE&num=1&cid=CAASwgHkaGiYN5yzkZdX7aXnz847fLmlWv5tYbYf3_-QCp3PPMsAXFW6dTyigebjY2AV690YByqn1tBs9vsrDaVmhpXa7NSb0RmGaaRzpXrgv78AeuDUsNpMNTr42b2JSn-oI9p5ujQAa9wJ5QOy5HskBAm-7VrkRbkPR0qQM33EgRf4H5J5r5a-A3pGx-hKhQc2ESmLErFifHcXkis7lvLWt2Rmr3H4a1NZMo4Ze8aHLASxslmhXpCM25On9Et7Pfuw4a8VxQ&ad_cpn=%5BCPN%5D&sig=AOD64_3j1TyzFhnDjqFlpxZe6s64IqFSXQ&ctype=110&video_id=RGgyXOoo-qg&label=video_click_to_advertiser_site&ms=%5BCLICK_MS%5D
+            - generic [ref=e225]:
+              - link [aria-hidden] [ref=e227] [cursor=pointer]:
+                - /url: /watch?v=-PPCDEOOYF0&pp=ygUDRFNB
+              - generic [ref=e229] [cursor=pointer]:
+                - generic [ref=e230]:
+                  - heading [level=3] [ref=e232]:
+                    - 'link "Learn DSA in 2 Hours |Tutorial For Beginners | in Tamil #dsa 1 hour, 53 minutes" [ref=e233]':
+                      - /url: /watch?v=-PPCDEOOYF0&pp=ygUDRFNB
+                      - text: "Learn DSA in 2 Hours |Tutorial For Beginners | in Tamil #dsa"
+                  - generic [ref=e236]:
+                    - generic [ref=e237]: 286K
+                    - generic [ref=e238]: •7mo ago
+                - generic [ref=e239]:
+                  - link "Go to channel Error Makes Clever" [ref=e240]:
+                    - /url: /@ErrorMakesClever
+                  - link "Error Makes Clever" [ref=e245]:
+                    - /url: /@ErrorMakesClever
+                - generic [ref=e246]:
+                  - text: "Book a free consultation call to enroll in full stack development course: ..."
+                  - tooltip "tooltip"
+                - img "4K" [ref=e251]:
+                  - generic [aria-hidden] [ref=e252]: 4K
+                - generic [ref=e255]:
+                  - generic [ref=e256]:
+                    - generic [ref=e259]: 44 chapters
+                    - button [ref=e261]
+                  - button "More" [ref=e266]
+            - generic [ref=e271] [cursor=pointer]:
+              - link [aria-hidden] [ref=e272]:
+                - /url: /watch?v=0bHoB32fuj0&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&pp=0gcJCZAGa94AFGB0
+                - generic [ref=e274]: 316 lessons
+              - generic [ref=e286]:
+                - generic [ref=e287]:
+                  - heading [level=3] [ref=e288]:
+                    - link "Strivers A2Z-DSA Course | DSA Playlist | Placements" [ref=e289]:
+                      - /url: /watch?v=0bHoB32fuj0&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&pp=0gcJCZAGa94AFGB0
+                  - generic [ref=e291]:
+                    - group [ref=e292]:
+                      - link "take U forward" [ref=e295]:
+                        - /url: /@takeUforward
+                      - generic "Verified" [ref=e296]
+                      - link "Course" [ref=e299]:
+                        - /url: /@takeUforward
+                    - group [ref=e300]
+                    - group [ref=e301]:
+                      - link "Don't watch my A2Z DSA Course · 8:24" [ref=e303]:
+                        - /url: /watch?v=0bHoB32fuj0&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz
+                    - group [ref=e304]:
+                      - link "How to setup VS code for DSA and CP | Input / Output split format · 8:51" [ref=e306]:
+                        - /url: /watch?v=h3uDCJ5mvgw&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz
+                    - group [ref=e307]:
+                      - link "View full course" [ref=e310]:
+                        - /url: /playlist?list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz
+                    - group [ref=e311]:
+                      - generic [ref=e312]: This playlist is not in C++ or Java or Python, it covers DSA and we write pseudocode, only one video is in C++, for the basics, but apart from that we cover everything in depth. Follow the website takeuforward.org for a structured learning, and not the playlist.
+                - button "More actions" [ref=e315]
+            - generic [ref=e331] [cursor=pointer]:
+              - generic [ref=e332]:
+                - link "Master AI Tools In 3 Hours" [ref=e335]:
+                  - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CDAoQhPkHa9_SL4KBrtoP_-uI6AXQ65uWiwHv2MvEqBawkB8QAiAAYOWS6IPYDoIBF2NhLXB1Yi02MjE5ODExNzQ3MDQ5MzcxoAHNqO_UKakCTafeHNU4Rz6oAwTIAwqqBKMCT9CyQdTy5MVCAVlrBPwpgiRx2RYTWI6DthQ1MhrvGSpA_BYYKPmLEiY0m4oTXUu6-WRFG41JHcirlv-9PDJYm5c3gTm2A0P53_4_1jgEfN7RCM8yY0x9y5JgKEWHiuOltHTUaSoIQkJTwP49mQOv8xPt25FdALEJOXn3qZegi_DnlMmXYm3bhJ9aiBS2y_Of3H4VjCGFXfFTAot622th6Vbn0-1kjzvKAL1tLxY6kNzyY3h_JNsWfNYTGCBNQv6BCaNEO_LVcPmwOQ2EPiMOIld4ZSr6Q2_TL8JXQd0DBkTCODWAu0Jy581xBS_MnvjhSiCEOjCpvMUJKy9RknmqiEt-jPzsFce0_wPVLIEOHt1MGZkD7_r7Cp8FGzSFONLZ0dZeiAWTvM_hWJIFCAgTeIr2weEEoAakAYAHzeC_tASQBwSoB6XPsQKoB-edsQKoB-idsQKoB4P2sQKoB_nTsQKoB8nasQKoB6ngsQKoB6jSG6gHsdwbqAewm7ECqAf9srECqAfIz7ECqAfJz7ECqAf81bECqAf71bECqAeM1rECqAeL1rECqAea4rECqAeb4rECqAee6rECqAef6rECqAe68LECqAf467ECqAe86rECqAfv8bECqAf8r7ECqAe-2bECqAe_2bECqAe3obECqAfVqbECqAfn2rECqAfetbECqAfqsbECqAe-t7ECqAeZtbECqAeFwbECqAfrpbECqAfKqbEC0gguCIBBEAEYXjICggI6D4BCgMCAgICAgIACqoCAGEjZoNI1UBRYkJDp-KalmANgAZoJKGh0dHBzOi8vYmUxMHguY29tL2FpLXRvb2xzLXdvcmtzaG9wLWdhNi-xCSt87WZkYPsMyAkAmAsBugs6CAMQBRgWIAgoATAcQAFIAFhOYABoAHABiAEAmAEBogEICgCoAgHYAgLYAQGAAgGIAga6AwV2aXNpbtALEtIMAhAB2gwmCgsQ4I-D0MXJ28_6ARICAQMaDRiTvM_hWCCH49GM6QVAAUoCEB-aDQESqg0CSU7IDQHSDbEBaHR0cHM6Ly9iZTEweC5jb20vYWktdG9vbHMtd29ya3Nob3AtZ2E2Lz91dG1fc291cmNlPWdhNiZ1dG1fbWVkaXVtPVBtYXhfU3BvcnRzZ29sZjImdXRtX2NhbXBhaWduPTIzODI2OTc0NjI3JnV0bV90ZXJtPSZ1dG1faWQ9MjM4MjY5NzQ2MjcmZ2FkX3NvdXJjZT0yJmdhZF9jYW1wYWlnbmlkPTIzODI3MDQ1OTA3sA6NrPH_GLgT____________AYgUArAUA8AVgYCAQNAVAdgVAZgWAeIWAggBgBcBihcYCAMYASABKAEwATgBQAFIAVABWAFgAmgBoBcBqReQgibtB6zgVboXBigAMAA4AdAYAfAYAcIZAggB&ase=2&gclid=EAIaIQobChMI36Tp-KalmAMVgoBLBR3_NQJdEAEYAiAAEgI-dfD_BwE&num=2&cid=CAASwgHkaGiYN5yzkZdX7aXnz847fLmlWv5tYbYf3_-QCp3PPMsAXFW6dTyigebjY2AV690YByqn1tBs9vsrDaVmhpXa7NSb0RmGaaRzpXrgv78AeuDUsNpMNTr42b2JSn-oI9p5ujQAa9wJ5QOy5HskBAm-7VrkRbkPR0qQM33EgRf4H5J5r5a-A3pGx-hKhQc2ESmLErFifHcXkis7lvLWt2Rmr3H4a1NZMo4Ze8aHLASxslmhXpCM25On9Et7Pfuw4a8VxQ&sig=AOD64_0Z2Zd0LixY61P0TNOtBZcYm4g_8w&ms=%5BCLICK_MS%5D&nb=0&nx=%5BNX%5D&ny=%5BNY%5D&dim=%5BDIM%5D
+                - link "Master 10+ AI tools in 3 hours to boost your productivity and career." [ref=e338]:
+                  - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CDAoQhPkHa9_SL4KBrtoP_-uI6AXQ65uWiwHv2MvEqBawkB8QAiAAYOWS6IPYDoIBF2NhLXB1Yi02MjE5ODExNzQ3MDQ5MzcxoAHNqO_UKakCTafeHNU4Rz6oAwTIAwqqBKMCT9CyQdTy5MVCAVlrBPwpgiRx2RYTWI6DthQ1MhrvGSpA_BYYKPmLEiY0m4oTXUu6-WRFG41JHcirlv-9PDJYm5c3gTm2A0P53_4_1jgEfN7RCM8yY0x9y5JgKEWHiuOltHTUaSoIQkJTwP49mQOv8xPt25FdALEJOXn3qZegi_DnlMmXYm3bhJ9aiBS2y_Of3H4VjCGFXfFTAot622th6Vbn0-1kjzvKAL1tLxY6kNzyY3h_JNsWfNYTGCBNQv6BCaNEO_LVcPmwOQ2EPiMOIld4ZSr6Q2_TL8JXQd0DBkTCODWAu0Jy581xBS_MnvjhSiCEOjCpvMUJKy9RknmqiEt-jPzsFce0_wPVLIEOHt1MGZkD7_r7Cp8FGzSFONLZ0dZeiAWTvM_hWJIFCAgTeIr2weEEoAakAYAHzeC_tASQBwSoB6XPsQKoB-edsQKoB-idsQKoB4P2sQKoB_nTsQKoB8nasQKoB6ngsQKoB6jSG6gHsdwbqAewm7ECqAf9srECqAfIz7ECqAfJz7ECqAf81bECqAf71bECqAeM1rECqAeL1rECqAea4rECqAeb4rECqAee6rECqAef6rECqAe68LECqAf467ECqAe86rECqAfv8bECqAf8r7ECqAe-2bECqAe_2bECqAe3obECqAfVqbECqAfn2rECqAfetbECqAfqsbECqAe-t7ECqAeZtbECqAeFwbECqAfrpbECqAfKqbEC0gguCIBBEAEYXjICggI6D4BCgMCAgICAgIACqoCAGEjZoNI1UBRYkJDp-KalmANgAZoJKGh0dHBzOi8vYmUxMHguY29tL2FpLXRvb2xzLXdvcmtzaG9wLWdhNi-xCSt87WZkYPsMyAkAmAsBugs6CAMQBRgWIAgoATAcQAFIAFhOYABoAHABiAEAmAEBogEICgCoAgHYAgLYAQGAAgGIAga6AwV2aXNpbtALEtIMAhAB2gwmCgsQ4I-D0MXJ28_6ARICAQMaDRiTvM_hWCCH49GM6QVAAUoCEB-aDQESqg0CSU7IDQHSDbEBaHR0cHM6Ly9iZTEweC5jb20vYWktdG9vbHMtd29ya3Nob3AtZ2E2Lz91dG1fc291cmNlPWdhNiZ1dG1fbWVkaXVtPVBtYXhfU3BvcnRzZ29sZjImdXRtX2NhbXBhaWduPTIzODI2OTc0NjI3JnV0bV90ZXJtPSZ1dG1faWQ9MjM4MjY5NzQ2MjcmZ2FkX3NvdXJjZT0yJmdhZF9jYW1wYWlnbmlkPTIzODI3MDQ1OTA3sA6NrPH_GLgT____________AYgUArAUA8AVgYCAQNAVAdgVAZgWAeIWAggBgBcBihcYCAMYASABKAEwATgBQAFIAVABWAFgAmgBoBcBqReQgibtB6zgVboXBigAMAA4AdAYAfAYAcIZAggB&ase=2&gclid=EAIaIQobChMI36Tp-KalmAMVgoBLBR3_NQJdEAEYAiAAEgI-dfD_BwE&num=2&cid=CAASwgHkaGiYN5yzkZdX7aXnz847fLmlWv5tYbYf3_-QCp3PPMsAXFW6dTyigebjY2AV690YByqn1tBs9vsrDaVmhpXa7NSb0RmGaaRzpXrgv78AeuDUsNpMNTr42b2JSn-oI9p5ujQAa9wJ5QOy5HskBAm-7VrkRbkPR0qQM33EgRf4H5J5r5a-A3pGx-hKhQc2ESmLErFifHcXkis7lvLWt2Rmr3H4a1NZMo4Ze8aHLASxslmhXpCM25On9Et7Pfuw4a8VxQ&sig=AOD64_0Z2Zd0LixY61P0TNOtBZcYm4g_8w&ms=%5BCLICK_MS%5D&nb=7&nx=%5BNX%5D&ny=%5BNY%5D&dim=%5BDIM%5D
+                - generic [ref=e339]:
+                  - generic [ref=e341]:
+                    - generic [ref=e342]: Sponsored
+                    - text: ·
+                  - generic [ref=e343]: Be 10x
+              - button "My Ad Center" [ref=e347]
+            - generic [ref=e352] [cursor=pointer]:
+              - link [aria-hidden] [ref=e353]:
+                - /url: /watch?v=VTLCoHnyACE&list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt
+                - generic [ref=e355]: 144 videos
+              - generic [ref=e367]:
+                - generic [ref=e368]:
+                  - heading [level=3] [ref=e369]:
+                    - link "Complete C++ DSA Course | Data Structures & Algorithms Playlist" [ref=e370]:
+                      - /url: /watch?v=VTLCoHnyACE&list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt
+                  - generic [ref=e372]:
+                    - group [ref=e373]:
+                      - link "Apna College" [ref=e376]:
+                        - /url: /@ApnaCollegeOfficial
+                      - generic "Verified" [ref=e377]
+                      - link "Playlist" [ref=e380]:
+                        - /url: /@ApnaCollegeOfficial
+                    - group [ref=e381]
+                    - group [ref=e382]:
+                      - 'link "Lecture 1 : Flowchart & Pseudocode + Installation | DSA Series by Shradha Khapra Ma''am | C++ · 1:25:52" [ref=e384]':
+                        - /url: /watch?v=VTLCoHnyACE&list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt
+                    - group [ref=e385]:
+                      - 'link "Lecture 2 : Variable, Data Types & Operators | DSA Series by Shradha Ma''am | C++ · 1:16:44" [ref=e387]':
+                        - /url: /watch?v=Dxu7GKtdbnA&list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt
+                    - group [ref=e388]:
+                      - link "View full playlist" [ref=e391]:
+                        - /url: /playlist?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt
+                    - group [ref=e392]:
+                      - generic [ref=e393]: "#1 DSA Series for Placement Preparation in Making. Neither less nor more : Study only what's needed & Save Time!"
+                - button "More actions" [ref=e396]
+            - generic [ref=e401]:
+              - link [aria-hidden] [ref=e403] [cursor=pointer]:
+                - /url: /watch?v=RpLnQnurpLY&pp=ygUDRFNB
+              - generic [ref=e405] [cursor=pointer]:
+                - generic [ref=e406]:
+                  - heading [level=3] [ref=e408]:
+                    - link "Learn Data Structures and Algorithms Visually – Crash Course 1 hour, 14 minutes" [ref=e409]:
+                      - /url: /watch?v=RpLnQnurpLY&pp=ygUDRFNB
+                      - text: Learn Data Structures and Algorithms Visually – Crash Course
+                  - generic [ref=e412]:
+                    - generic [ref=e413]: 362K
+                    - generic [ref=e414]: •3mo ago
+                - generic [ref=e415]:
+                  - button "Collaboration channels" [ref=e417]
+                  - generic [ref=e434]: freeCodeCamp.organd logicBase Labs
+                - generic [ref=e441]:
+                  - text: Build an intuitive mental model of core data structures and algorithms using relatable, real-world analogies. Topics range from ...
+                  - tooltip "tooltip"
+                - img "4K" [ref=e446]:
+                  - generic [aria-hidden] [ref=e447]: 4K
+                - generic [ref=e450]:
+                  - generic [ref=e451]:
+                    - generic [ref=e454]: Matching chapter
+                    - button "0:00 Introduction to DSA" [ref=e456]
+                  - button "More" [ref=e461]
+            - generic [ref=e477] [cursor=pointer]:
+              - generic [ref=e478]:
+                - link "#1 Data Engineer Course" [ref=e481]:
+                  - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CKduKhPkHa9_SL4KBrtoP_-uI6AWXqMuZigGKsurpsxOwkB8QAyAAYOWS6IPYDoIBF2NhLXB1Yi02MjE5ODExNzQ3MDQ5MzcxoAGUt_DLPakCTafeHNU4Rz6oAwTIAwqqBJcCT9ANy3DI_W57gvI6_4sqnjNQ3x8gXYWBoBpdEg6yGjZX3RARG_yAHSUggYoJeUK2_W0PP5EUHtS8t_m0DQN285UI3D6uAXfw5fIW_A9ua-OIDc8ySltq5ZVgKkTJgOPRo2_UZjV8WkYc3PwwnxCZoV3Lnt5BArwPKmbxvr73153liM2WYWnfm51fiBS2V8KgGQht1S-dBvxJFZoh2mEiUDiifps71jXSW7B3OAdhkdaxL2V3eNwfe9BAHzYTQ_iIJLFZAfHZKM-aRcnVfjsO-YW6a-IwSX1uDNWhLftJhQaa4TSD1pnlyCA4pL3COiraQAZXxO9PNfE1uvaSTy73bJiIrRvlN8usA8aCcWXXLf9CAUOSjKIViAWKgZPoUZIFCAgTeKqFyK4YoAZugAeU78CrGJAHBKgHpc-xAqgH552xAqgH6J2xAqgHg_axAqgH-dOxAqgHydqxAqgHqeCxAqgHqNIbqAex3BuoB7CbsQKoB_2ysQKoB8jPsQKoB8nPsQKoB_zVsQKoB_vVsQKoB4zWsQKoB4vWsQKoB5risQKoB5visQKoB57qsQKoB5_qsQKoB7rwsQKoB_jrsQKoB7zqsQKoB-_xsQKoB_yvsQKoB77ZsQKoB7_ZsQKoB7ehsQKoB9WpsQKoB-fasQKoB961sQKoB-qxsQKoB763sQKoB5m1sQKoB4XBsQKoB-ulsQKoB8qpsQLSCC4IgEEQARheMgKCAjoPgEKAwICAgICAgAKqgIAYSNmg0jVQFFiQkOn4pqWYA2ABmgk7aHR0cHM6Ly93d3cuYm9zc2NvZGVyYWNhZGVteS5jb20vYWktZGF0YS1lbmdpbmVlcmluZy1jb3Vyc2WxCfpxjeT2jPhVyAkAyAmKApgLAboLOggDEAUYBCAIKAEwHEABSABYTmAAaABwAYgBAJgBAaIBCAoAqAIB2AIC2AEBgAIBiAIFugMFdmlzaW7QCxLSDAIQAdoMJgoLEJD-wrr_7LTFnQESAgEDGg0YioGT6FEgqtKLjYQFQAFKAhAfmg0BEqoNAklOyA0B0g30AWh0dHBzOi8vd3d3LmJvc3Njb2RlcmFjYWRlbXkuY29tL2FpLWRhdGEtZW5naW5lZXJpbmctY291cnNlP3V0bV9jYW1wYWlnbj1HQWRzLURFLURnZW4tVjItT2xkRFNNTC0yOU5vdjI0LUVtcGxveWVyJnV0bV9tZWRpdW09RGlzcGxheSZ1dG1fc291cmNlPUdvb2dsZS1BZHMmUmVmPUdvb2dsZUFkcy1ERS1EZ2VuLVYyLU9sZERTTUwtMjlOb3YyNC1FbXBsb3llciZnYWRfc291cmNlPTImZ2FkX2NhbXBhaWduaWQ9MjE5NjE2ODcxNzi4E____________wGIFBSwFAPAFYGAgEDQFQHYFQHiFgIIAYAXAYoXGAgDGAEgASgBMAE4AUABSAFQAVgBYAJoAaAXAakXUySw2IeAIeq6FwYoADAAOAHQGAHwGAHCGQIIAQ&ase=2&gclid=EAIaIQobChMI36Tp-KalmAMVgoBLBR3_NQJdEAEYAyAAEgIPzvD_BwE&num=3&cid=CAASwgHkaGiYN5yzkZdX7aXnz847fLmlWv5tYbYf3_-QCp3PPMsAXFW6dTyigebjY2AV690YByqn1tBs9vsrDaVmhpXa7NSb0RmGaaRzpXrgv78AeuDUsNpMNTr42b2JSn-oI9p5ujQAa9wJ5QOy5HskBAm-7VrkRbkPR0qQM33EgRf4H5J5r5a-A3pGx-hKhQc2ESmLErFifHcXkis7lvLWt2Rmr3H4a1NZMo4Ze8aHLASxslmhXpCM25On9Et7Pfuw4a8VxQ&sig=AOD64_2brZ1Z1__qZ4-jWlxHDSQ0eHAsyg&ms=%5BCLICK_MS%5D&nb=0&nx=%5BNX%5D&ny=%5BNY%5D&dim=%5BDIM%5D
+                - link "Work on 8+ Live Hands on Projects under Expert Data Engineer's Guidance" [ref=e484]:
+                  - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CKduKhPkHa9_SL4KBrtoP_-uI6AWXqMuZigGKsurpsxOwkB8QAyAAYOWS6IPYDoIBF2NhLXB1Yi02MjE5ODExNzQ3MDQ5MzcxoAGUt_DLPakCTafeHNU4Rz6oAwTIAwqqBJcCT9ANy3DI_W57gvI6_4sqnjNQ3x8gXYWBoBpdEg6yGjZX3RARG_yAHSUggYoJeUK2_W0PP5EUHtS8t_m0DQN285UI3D6uAXfw5fIW_A9ua-OIDc8ySltq5ZVgKkTJgOPRo2_UZjV8WkYc3PwwnxCZoV3Lnt5BArwPKmbxvr73153liM2WYWnfm51fiBS2V8KgGQht1S-dBvxJFZoh2mEiUDiifps71jXSW7B3OAdhkdaxL2V3eNwfe9BAHzYTQ_iIJLFZAfHZKM-aRcnVfjsO-YW6a-IwSX1uDNWhLftJhQaa4TSD1pnlyCA4pL3COiraQAZXxO9PNfE1uvaSTy73bJiIrRvlN8usA8aCcWXXLf9CAUOSjKIViAWKgZPoUZIFCAgTeKqFyK4YoAZugAeU78CrGJAHBKgHpc-xAqgH552xAqgH6J2xAqgHg_axAqgH-dOxAqgHydqxAqgHqeCxAqgHqNIbqAex3BuoB7CbsQKoB_2ysQKoB8jPsQKoB8nPsQKoB_zVsQKoB_vVsQKoB4zWsQKoB4vWsQKoB5risQKoB5visQKoB57qsQKoB5_qsQKoB7rwsQKoB_jrsQKoB7zqsQKoB-_xsQKoB_yvsQKoB77ZsQKoB7_ZsQKoB7ehsQKoB9WpsQKoB-fasQKoB961sQKoB-qxsQKoB763sQKoB5m1sQKoB4XBsQKoB-ulsQKoB8qpsQLSCC4IgEEQARheMgKCAjoPgEKAwICAgICAgAKqgIAYSNmg0jVQFFiQkOn4pqWYA2ABmgk7aHR0cHM6Ly93d3cuYm9zc2NvZGVyYWNhZGVteS5jb20vYWktZGF0YS1lbmdpbmVlcmluZy1jb3Vyc2WxCfpxjeT2jPhVyAkAyAmKApgLAboLOggDEAUYBCAIKAEwHEABSABYTmAAaABwAYgBAJgBAaIBCAoAqAIB2AIC2AEBgAIBiAIFugMFdmlzaW7QCxLSDAIQAdoMJgoLEJD-wrr_7LTFnQESAgEDGg0YioGT6FEgqtKLjYQFQAFKAhAfmg0BEqoNAklOyA0B0g30AWh0dHBzOi8vd3d3LmJvc3Njb2RlcmFjYWRlbXkuY29tL2FpLWRhdGEtZW5naW5lZXJpbmctY291cnNlP3V0bV9jYW1wYWlnbj1HQWRzLURFLURnZW4tVjItT2xkRFNNTC0yOU5vdjI0LUVtcGxveWVyJnV0bV9tZWRpdW09RGlzcGxheSZ1dG1fc291cmNlPUdvb2dsZS1BZHMmUmVmPUdvb2dsZUFkcy1ERS1EZ2VuLVYyLU9sZERTTUwtMjlOb3YyNC1FbXBsb3llciZnYWRfc291cmNlPTImZ2FkX2NhbXBhaWduaWQ9MjE5NjE2ODcxNzi4E____________wGIFBSwFAPAFYGAgEDQFQHYFQHiFgIIAYAXAYoXGAgDGAEgASgBMAE4AUABSAFQAVgBYAJoAaAXAakXUySw2IeAIeq6FwYoADAAOAHQGAHwGAHCGQIIAQ&ase=2&gclid=EAIaIQobChMI36Tp-KalmAMVgoBLBR3_NQJdEAEYAyAAEgIPzvD_BwE&num=3&cid=CAASwgHkaGiYN5yzkZdX7aXnz847fLmlWv5tYbYf3_-QCp3PPMsAXFW6dTyigebjY2AV690YByqn1tBs9vsrDaVmhpXa7NSb0RmGaaRzpXrgv78AeuDUsNpMNTr42b2JSn-oI9p5ujQAa9wJ5QOy5HskBAm-7VrkRbkPR0qQM33EgRf4H5J5r5a-A3pGx-hKhQc2ESmLErFifHcXkis7lvLWt2Rmr3H4a1NZMo4Ze8aHLASxslmhXpCM25On9Et7Pfuw4a8VxQ&sig=AOD64_2brZ1Z1__qZ4-jWlxHDSQ0eHAsyg&ms=%5BCLICK_MS%5D&nb=7&nx=%5BNX%5D&ny=%5BNY%5D&dim=%5BDIM%5D
+                - generic [ref=e485]:
+                  - generic [ref=e487]:
+                    - generic [ref=e488]: Sponsored
+                    - text: ·
+                  - generic [ref=e489]: Bosscoder Academy
+              - button "My Ad Center" [ref=e493]
+            - generic [ref=e497]:
+              - heading "Shorts" [level=2] [ref=e505]
+              - generic [ref=e507]:
+                - generic [ref=e510]:
+                  - link [aria-hidden] [ref=e511] [cursor=pointer]:
+                    - /url: /shorts/0UbB7zx5ukk
+                  - generic [ref=e515] [cursor=pointer]:
+                    - generic [ref=e516]:
+                      - heading [level=3] [ref=e517]:
+                        - link "DSA Was Hard Until I Learned These 15 Patterns" [ref=e518]:
+                          - /url: /shorts/0UbB7zx5ukk
+                      - generic [aria-hidden] [ref=e519]: 73K views
+                    - button "More actions" [ref=e521]
+                - generic [ref=e527]:
+                  - link [aria-hidden] [ref=e528] [cursor=pointer]:
+                    - /url: /shorts/t3YdguyFDiA
+                    - img [ref=e533]:
+                      - generic [aria-hidden] [ref=e534]: New
+                  - generic [ref=e535] [cursor=pointer]:
+                    - generic [ref=e536]:
+                      - heading [level=3] [ref=e537]:
+                        - 'link "Dijkstra vs A* – Who Wins the Shortest Path Race? #dsa #algorithms #shorts*" [ref=e538]':
+                          - /url: /shorts/t3YdguyFDiA
+                      - generic [aria-hidden] [ref=e539]: 91 views
+                    - button "More actions" [ref=e541]
+                - generic [ref=e547]:
+                  - link [aria-hidden] [ref=e548] [cursor=pointer]:
+                    - /url: /shorts/9KeE_uDsOI8
+                  - generic [ref=e552] [cursor=pointer]:
+                    - generic [ref=e553]:
+                      - heading [level=3] [ref=e554]:
+                        - link "5 Steps to Learn DSA - Complete Roadmap To Learn DSA" [ref=e555]:
+                          - /url: /shorts/9KeE_uDsOI8
+                      - generic [aria-hidden] [ref=e556]: 1.3M views
+                    - button "More actions" [ref=e558]
+                - generic [ref=e564]:
+                  - link [aria-hidden] [ref=e565] [cursor=pointer]:
+                    - /url: /shorts/tRtwSMM7Wgg
+                    - img [ref=e570]:
+                      - generic [aria-hidden] [ref=e571]: New
+                  - generic [ref=e572] [cursor=pointer]:
+                    - generic [ref=e573]:
+                      - heading [level=3] [ref=e574]:
+                        - 'link "Merge Sort Explained in 10 Seconds! 🤯 | DSA Visualisation #Shorts #coding #dsa" [ref=e575]':
+                          - /url: /shorts/tRtwSMM7Wgg
+                      - generic [aria-hidden] [ref=e576]: 10 views
+                    - button "More actions" [ref=e578]
+                - generic [ref=e584]:
+                  - link [aria-hidden] [ref=e585] [cursor=pointer]:
+                    - /url: /shorts/OjOcpf3eVas
+                  - generic [ref=e589] [cursor=pointer]:
+                    - generic [ref=e590]:
+                      - heading [level=3] [ref=e591]:
+                        - link "How to prepare DSA for Placements ? Placement Series - Ep-1" [ref=e592]:
+                          - /url: /shorts/OjOcpf3eVas
+                      - generic [aria-hidden] [ref=e593]: 257K views
+                    - button "More actions" [ref=e595]
+  - generic [ref=e625]:
+    - link:
+      - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=CBBwQhPkHa9_SL4KBrtoP_-uI6AWTn8_4igHit9OywhZkEAEgAGDlkuiD2A6CARdjYS1wdWItNjIxOTgxMTc0NzA0OTM3MaAB_p6k6ESoAwSqBJcCT9ANy3DI_W57gvI6_4sqnjNQ3x8gXYWBoBpdEg6yGjZX3RARG_yAHSUggYoJeUK2_W0PP5EUHtS8t_m0DQN285UI3D6uAXfw5fIW_A9ua-OIDc8ySltq5ZVgKkTJgOPRo2_UZjV8WkYc3PwwnxCZoV3Lnt5BArwPKmbxvr73153liM2WYWnfm51fiBS2V8KgGQht1S-dBvxJFZoh2mEiUDiifps71jXSW7B3OAdhkdaxL2V3eNwfe9BAHzYTQ_iIJLFZAfHZKM-aRcnVfjsO8vrCa-Y4SasZ2IVyVUDD4MivK013aYd6xSyK4v_GBnLbwunH7cWbYtteX8Via1G8qINlrRvlN8usLebVVmTXLf9CAW7R6d0diAWu5vmOW5IFDAgSMKj1o9HOy4y0RJIFCAgTeJvSmfMfoAZVgAepz-_IH5AHBKgHpc-xAqgH552xAqgH6J2xAqgHg_axAqgH-dOxAqgHydqxAqgHqeCxAqgHqNIbqAex3BuoB7CbsQKoB_2ysQKoB8jPsQKoB8nPsQKoB_zVsQKoB_vVsQKoB4zWsQKoB4vWsQKoB5risQKoB5visQKoB57qsQKoB5_qsQKoB7rwsQKoB_jrsQKoB7zqsQKoB-_xsQKoB_yvsQKoB9XOG6gHvtmxAqgHv9mxAqgHlQioB5zcG6gHt6GxAqgH1amxAqgH59qxAqgH3rWxAqgH6rGxAqgHvrexAqgHmbWxAqgHhcGxAqgH66WxAqgHyqmxApIIC1JHZ3lYT29vLXFnqAgB0gguCIBBEAEYXjICggI6D4BCgMCAgICAgIACqoCAGEjZoNI1UBRYkJDp-KalmANgAZoJG2h0dHBzOi8vYW50aWdyYXZpdHkuZ29vZ2xlL7EJV9dcr77hox7ICRfICY8ByAmQAcgJwgG6CzoIAxAFGBYgBygBMBxAAUgAWH1gAGgAcAGIAQCYAQGiAQgKAKgCAdgCAtgBBoACAYgCBboDBXZpc2lu0AsS4AsBogwsaiUKI2NvbS5nb29nbGUuYW5kcm9pZC5hcHBzLmFudGlncmF2aXR5eACIAQDSDAIQAdoMJQoKEKDfhenlr8SiJhICAQMaDRiu5vmOWyCRmYC66AVAAUoCEB-aDQESqg0CSU7IDQHSDb0CaHR0cHM6Ly9hZC5kb3VibGVjbGljay5uZXQvc2VhcmNoYWRzL2xpbmsvY2xpY2s_bGlkPTU4NzAwMDA5MTUzMzA2NzI3JmRzX2FfY2lkPTg1NjMwOTE3MzkmZHNfYV9jYWlkPTI0NDQ3OTAxODA5JmRzX2FfYWdpZD0mZHNfYV9maWlkPSZkc19hX2xpZD0mZHNfYV9leHRpZD0mJmRzX2VfYWRpZD0mZHNfZV9tYXRjaHR5cGU9JmRzX2VfZGV2aWNlPWMmZHNfZV9uZXR3b3JrPXgmJmRzX3VybF92PTImZHNfZGVzdF91cmw9aHR0cHM6Ly9hbnRpZ3Jhdml0eS5nb29nbGUvP2djbHNyYz1hdy5kcyZnYWRfc291cmNlPTImZ2FkX2NhbXBhaWduaWQ9MjQ0NTg5ODIxOTCwDr3N_pwZuBP___________8BiBQBsBQDwBWBgIBA0BUB2BUBmBYB4hYCCAGAFwGKFxgIAxgBIAEoATABOAFAAUgBUAFYAWACaAGgFwGpFxnZ8K64a5FmuhcGKAAwADgB0BgB8BgBwhkCCAE&ase=2&gclid=EAIaIQobChMI36Tp-KalmAMVgoBLBR3_NQJdEAEYASAAEgK-n_D_BwE&num=1&cid=CAASwgHkaGiYN5yzkZdX7aXnz847fLmlWv5tYbYf3_-QCp3PPMsAXFW6dTyigebjY2AV690YByqn1tBs9vsrDaVmhpXa7NSb0RmGaaRzpXrgv78AeuDUsNpMNTr42b2JSn-oI9p5ujQAa9wJ5QOy5HskBAm-7VrkRbkPR0qQM33EgRf4H5J5r5a-A3pGx-hKhQc2ESmLErFifHcXkis7lvLWt2Rmr3H4a1NZMo4Ze8aHLASxslmhXpCM25On9Et7Pfuw4a8VxQ&ad_cpn=%5BCPN%5D&sig=AOD64_3j1TyzFhnDjqFlpxZe6s64IqFSXQ&ctype=110&video_id=RGgyXOoo-qg&label=video_click_to_advertiser_site&ms=%5BCLICK_MS%5D
+      - generic [ref=e626] [cursor=pointer]

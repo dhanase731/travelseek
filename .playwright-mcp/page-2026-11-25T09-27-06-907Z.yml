@@ -1,0 +1,371 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - navigation "Page Header" [ref=f1e3]:
+      - link "Google Play logo" [ref=f1e4] [cursor=pointer]:
+        - /url: /store/games
+        - generic [aria-hidden] [ref=f1e12]: google_logo Play
+      - navigation "Main" [ref=f1e14]:
+        - tablist [ref=f1e16]:
+          - generic [ref=f1e19]:
+            - tab "Games" [ref=f1e20] [cursor=pointer]
+            - tab "Apps" [selected] [ref=f1e22] [cursor=pointer]
+            - tab "Books" [ref=f1e24] [cursor=pointer]
+            - tab "Kids" [ref=f1e26] [cursor=pointer]
+            - tab "Shop devices" [ref=f1e28] [cursor=pointer]
+      - generic [ref=f1e30]:
+        - button "Search" [ref=f1e32] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f1e33]: search
+        - button "Help centre" [ref=f1e35] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f1e36]: help_outline
+        - button "Open account menu" [ref=f1e41] [cursor=pointer]
+  - generic [ref=f1e47]:
+    - generic [ref=f1e50]:
+      - generic [ref=f1e55]:
+        - generic [ref=f1e58]:
+          - 'heading "AllTrails: Hike, Cycle & Run" [level=1] [ref=f1e60]'
+          - generic [ref=f1e61]:
+            - link "AllTrails, LLC" [ref=f1e63] [cursor=pointer]:
+              - /url: /store/apps/developer?id=AllTrails,+LLC
+            - generic [ref=f1e64]: Contains ads · In-app purchases
+        - region "Information badges" [ref=f1e67]:
+          - generic [ref=f1e68]:
+            - generic [ref=f1e69]:
+              - img "Rated 4.2 stars out of five stars" [ref=f1e72]:
+                - generic [aria-hidden] [ref=f1e73]: "4.2"
+                - generic [aria-hidden] [ref=f1e74]: star
+              - generic [ref=f1e75]: 3.89L reviews
+            - generic [ref=f1e76]:
+              - generic [ref=f1e77]: 5Cr+
+              - generic [ref=f1e78]: Downloads
+      - generic [ref=f1e79]:
+        - button "Install" [ref=f1e87]
+        - button "Share" [ref=f1e95] [cursor=pointer]
+    - generic [ref=f1e100]:
+      - generic [ref=f1e101]:
+        - generic [ref=f1e102]:
+          - generic [ref=f1e105]:
+            - list [ref=f1e106]:
+              - listitem [ref=f1e107]:
+                - button "Screenshot image" [ref=f1e109] [cursor=pointer]
+              - listitem [ref=f1e110]:
+                - button "Screenshot image" [ref=f1e112] [cursor=pointer]
+              - listitem [ref=f1e113]:
+                - button "Screenshot image" [ref=f1e115] [cursor=pointer]
+              - listitem [ref=f1e116]:
+                - button "Screenshot image" [ref=f1e118] [cursor=pointer]
+              - listitem [ref=f1e119]:
+                - button "Screenshot image" [ref=f1e121] [cursor=pointer]
+              - listitem [ref=f1e122]:
+                - button "Screenshot image" [ref=f1e124] [cursor=pointer]
+              - listitem [ref=f1e125]:
+                - button "Screenshot image" [ref=f1e127] [cursor=pointer]
+              - listitem [ref=f1e128]:
+                - button "Screenshot image" [ref=f1e130] [cursor=pointer]
+              - listitem [ref=f1e131]:
+                - button "Screenshot image" [ref=f1e133] [cursor=pointer]
+              - listitem [ref=f1e134]:
+                - button "Screenshot image" [ref=f1e136] [cursor=pointer]
+              - listitem [ref=f1e137]:
+                - button "Screenshot image" [ref=f1e139] [cursor=pointer]
+              - listitem [ref=f1e140]:
+                - button "Screenshot image" [ref=f1e142] [cursor=pointer]
+              - listitem [ref=f1e143]:
+                - button "Screenshot image" [ref=f1e145] [cursor=pointer]
+              - listitem [ref=f1e146]:
+                - button "Screenshot image" [ref=f1e148] [cursor=pointer]
+            - button "Scroll next" [ref=f1e150] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f1e152]: chevron_right
+          - generic [ref=f1e155]:
+            - generic [ref=f1e157]:
+              - heading "About this app" [level=2] [ref=f1e159]
+              - button "See more information on About this app" [ref=f1e161] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e162]: arrow_forward
+            - generic [ref=f1e163]:
+              - generic [ref=f1e164]: "Whether you hike, bike, run, or walk, AllTrails is your companion and guide to the outdoors. Find detailed reviews and inspiration from a community of trailgoers like you. We’ll help you plan, live, and share your outdoor adventures.AllTrails offers more than a running app or fitness activity tracker. It helps you discover dog-friendly, child-friendly, pram-friendly, or wheelchair-friendly trails, and more with turn-by-turn navigation to guide you through it.◆ Discover trails: Search over 500,000 trails around the world by location, interest, skill level, and more.◆ Plan your next adventure: Get in-depth trail info, from reviews to conditions to GPS driving directions — and save your favorite trails for later.◆ Stay on course: Stick to your planned route or chart your own course with confidence when you navigate on the trail with your phone or Wear OS device. Use Wear OS to leverage tiles and complications to start and monitor your activities.◆ Find points of interest: Discover waterfalls, historic sites, photo spots, and more along the trail.◆ Grow your community: Celebrate outdoor adventures and find inspiration by connecting with trailgoers like you.◆ Share your outdoor adventures: Easily post trails and activities on Facebook, Instagram, or WhatsApp.◆ Record your activity: Capture your stats, leave reviews, and post photos of your favorite walking trails.Discover trails that fit your nature. Trails for workout planners, hikers, walkers, mountain bikers, trail runners, and casual cyclists. Whether you’re pushing your limits or pushing a pram, there’s something out there for everyone. Let AllTrails help you find it.► Do more outdoors with AllTrails Plus►Spend less time figuring out where you want to be, and more time enjoying where you are. With offline maps, wrong-turn alerts, and extra safety and planning features, your annual subscription gives you more tools for more adventures.◆ Search by distance from you to find the closest trails.◆ Plan for the elements like ground conditions, weather, air quality, UV index, and more.◆ See how conditions change along the trail and preview by time of day.◆ Unplug completely or pack a backup with printed maps.◆ Explore without signal with map downloads for trails, parks, and entire areas.◆ Live share your trail activity with friends and family.◆ Prepare for the hills ahead: Follow topo maps and trail maps in 3D.◆ Focus on the view, not the map, with wrong-turn alerts.◆ Give back: AllTrails donates a portion of every subscription to 1% for the Planet.◆ Explore ad-free: Remove occasional ads by subscribing► New! Explore to the fullest with AllTrails Peak ►Make the most of your time on the trail with our newest premium membership. Chart your own course, plan ahead for conditions, and explore popular trails — with all the offline benefits of Plus.◆ Create your own route from scratch, or modify one of 500,000+ existing trails.◆ Explore the most popular places with heatmaps of recent trail activity.◆ Access every Plus and Base feature, too.Whether you’re geocaching in a national park, browsing bucket-list mountain bike routes, or planning a trail run to clear your head, AllTrails Plus and Peak make the great outdoors even greater."
+              - 'note "Explore the outdoors: hiking trail maps, bike trails, camping & backpacking maps" [ref=f1e165]'
+              - generic [ref=f1e167]:
+                - generic [ref=f1e168]: Updated on
+                - generic [ref=f1e169]: 18 Nov 2026
+              - generic [ref=f1e172]:
+                - generic [aria-hidden] [ref=f1e174]: Health & Fitness
+                - link "Health & Fitness" [ref=f1e175] [cursor=pointer]:
+                  - /url: /store/apps/category/HEALTH_AND_FITNESS
+          - generic [ref=f1e177]:
+            - banner [ref=f1e178]:
+              - generic [ref=f1e179]: Featured stories
+            - list [ref=f1e182]:
+              - listitem [ref=f1e183]:
+                - link "Play Education Simplify your subscriptions with Play Discover offers and earn rewards" [ref=f1e187] [cursor=pointer]:
+                  - /url: /store/apps/editorial?id=mc_apps_editorial_android_edu_subscription_center_fcp
+                  - generic [ref=f1e188]: Play Education
+                  - generic [ref=f1e193]:
+                    - generic [ref=f1e194]: Simplify your subscriptions with Play
+                    - generic [ref=f1e195]: Discover offers and earn rewards
+          - generic [ref=f1e197]:
+            - generic [ref=f1e199]:
+              - heading "Data safety" [level=2] [ref=f1e201]
+              - generic [ref=f1e202] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e203]: arrow_forward
+                - link "See more information on Data safety" [ref=f1e204]:
+                  - /url: /store/apps/datasafety?id=com.alltrails.alltrails
+            - generic [ref=f1e205]:
+              - text: Safety starts with understanding how developers collect and share your data. Data privacy and security practices may vary based on your use, region and age. The developer provided this information and may update it over time.
+              - generic [ref=f1e206]:
+                - list [ref=f1e207]:
+                  - listitem [ref=f1e208]:
+                    - generic [ref=f1e210]:
+                      - text: This app may share these data types with third parties
+                      - generic [ref=f1e211]: Location, Personal info and 3 others
+                  - listitem [ref=f1e212]:
+                    - generic [ref=f1e214]:
+                      - text: This app may collect these data types
+                      - generic [ref=f1e215]: Location, Personal info and 7 others
+                  - listitem [ref=f1e216]:
+                    - generic [ref=f1e218]: Data is encrypted in transit
+                  - listitem [ref=f1e219]:
+                    - generic [ref=f1e221]: You can request that data be deleted
+                - generic [ref=f1e224]:
+                  - generic [aria-hidden] [ref=f1e226]: See details
+                  - link "See more details on data safety" [ref=f1e227] [cursor=pointer]:
+                    - /url: /store/apps/datasafety?id=com.alltrails.alltrails
+          - generic [ref=f1e229]:
+            - generic [ref=f1e231]:
+              - heading "Ratings and reviews" [level=2] [ref=f1e233]
+              - button "See more information on Ratings and reviews" [ref=f1e235] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e236]: arrow_forward
+              - button "Ratings and reviews are verified" [ref=f1e240]:
+                - generic [aria-hidden] [ref=f1e244]: info_outline
+            - generic [ref=f1e245]:
+              - generic [ref=f1e248]:
+                - list [ref=f1e249]:
+                  - listitem [ref=f1e250]:
+                    - button "Phone" [pressed] [ref=f1e251] [cursor=pointer]:
+                      - generic [aria-hidden] [ref=f1e253]:
+                        - generic [aria-hidden] [ref=f1e255]: phone_android
+                        - generic [ref=f1e256]: Phone
+                  - listitem [ref=f1e257]:
+                    - button "Watch" [ref=f1e258] [cursor=pointer]:
+                      - generic [aria-hidden] [ref=f1e260]:
+                        - generic [aria-hidden] [ref=f1e262]: watch
+                        - generic [ref=f1e263]: Watch
+                  - listitem [ref=f1e264]:
+                    - button "Desktop" [ref=f1e265] [cursor=pointer]:
+                      - generic [aria-hidden] [ref=f1e267]:
+                        - generic [aria-hidden] [ref=f1e269]: laptop
+                        - generic [ref=f1e270]: Desktop
+                  - listitem [ref=f1e271]:
+                    - button "Tablet" [ref=f1e272] [cursor=pointer]:
+                      - generic [aria-hidden] [ref=f1e274]:
+                        - generic [aria-hidden] [ref=f1e276]: tablet_android
+                        - generic [ref=f1e277]: Tablet
+                - button "Scroll next" [ref=f1e279] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f1e281]: chevron_right
+              - generic [ref=f1e282]:
+                - generic [ref=f1e285]:
+                  - generic [ref=f1e286]:
+                    - generic [aria-hidden] [ref=f1e287]: "4.2"
+                    - img "Rated 4.2 stars out of five stars" [ref=f1e288]
+                    - generic [ref=f1e319]: 3.83L reviews
+                  - generic [ref=f1e320]:
+                    - img "2,59,477 reviews for star rating 5" [ref=f1e321]:
+                      - generic [aria-hidden] [ref=f1e322]: "5"
+                    - img "52,259 reviews for star rating 4" [ref=f1e325]:
+                      - generic [aria-hidden] [ref=f1e326]: "4"
+                    - img "12,999 reviews for star rating 3" [ref=f1e329]:
+                      - generic [aria-hidden] [ref=f1e330]: "3"
+                    - img "15,599 reviews for star rating 2" [ref=f1e333]:
+                      - generic [aria-hidden] [ref=f1e334]: "2"
+                    - img "41,859 reviews for star rating 1" [ref=f1e337]:
+                      - generic [aria-hidden] [ref=f1e338]: "1"
+                - generic [ref=f1e341]:
+                  - generic [ref=f1e342]:
+                    - generic [ref=f1e343]:
+                      - generic [ref=f1e344]: Kurt Parker
+                      - button "More review actions" [ref=f1e350] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f1e351]: more_vert
+                    - generic [ref=f1e352]:
+                      - img "Rated 1 stars out of five stars" [ref=f1e353]
+                      - text: 15 September 2026
+                  - generic [ref=f1e384]: foolishly paid for the subscription. even with "strong GPS signal" in clearings with full view of the sky, it thinks I'm 50 or more feet off the trail. it couldn't even track my movement. it was jumpy, jittery, and didn't know what direction I was headed. utterly worthless for navigating when trails diverge. waste of money, wish I could get a refund.
+                  - generic [ref=f1e385]:
+                    - generic [ref=f1e386]: 43 people found this review helpful
+                    - generic [ref=f1e387]:
+                      - generic [ref=f1e388]: Did you find this helpful?
+                      - generic [ref=f1e390]:
+                        - button "Yes" [ref=f1e391] [cursor=pointer]:
+                          - generic [ref=f1e394]: "Yes"
+                        - button "No" [ref=f1e395] [cursor=pointer]:
+                          - generic [ref=f1e398]: "No"
+                  - generic [ref=f1e399]:
+                    - generic [ref=f1e400]:
+                      - generic [ref=f1e401]: AllTrails, LLC
+                      - generic [ref=f1e402]: 17 September 2026
+                    - generic [ref=f1e403]: Hi there - thanks for the feedback and we’re sorry to hear you've been having trouble with the app's performance. If you haven’t done so already, please email support@alltrails.com so we can further investigate the issue you are running into and help troubleshoot. Thanks in advance!
+                - generic [ref=f1e405]:
+                  - generic [ref=f1e406]:
+                    - generic [ref=f1e407]:
+                      - generic [ref=f1e408]: Colby Parsons
+                      - button "More review actions" [ref=f1e414] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f1e415]: more_vert
+                    - generic [ref=f1e416]:
+                      - img "Rated 3 stars out of five stars" [ref=f1e417]
+                      - text: 14 June 2025
+                  - generic [ref=f1e448]: Pretty good but could be better. As I use the app more, unfortunately I find more issues with it. I want to be able to simply swipe through the pictures of a trail, but I cannot find a way to do that other than the first few when they are partially obscured by other information, then it prompts me to switch to thumbnails of all images, and I cannot swipe through the full images. Also, if I select a national park, I cannot use filters to select among the hikes. Very frustrating.
+                  - generic [ref=f1e449]:
+                    - generic [ref=f1e450]: 176 people found this review helpful
+                    - generic [ref=f1e451]:
+                      - generic [ref=f1e452]: Did you find this helpful?
+                      - generic [ref=f1e454]:
+                        - button "Yes" [ref=f1e455] [cursor=pointer]:
+                          - generic [ref=f1e458]: "Yes"
+                        - button "No" [ref=f1e459] [cursor=pointer]:
+                          - generic [ref=f1e462]: "No"
+                  - generic [ref=f1e463]:
+                    - generic [ref=f1e464]:
+                      - generic [ref=f1e465]: AllTrails, LLC
+                      - generic [ref=f1e466]: 5 December 2024
+                    - generic [ref=f1e467]: Thanks for the feedback. We'd love to hear about what improvements we could make to the app to make it better. Feel free to reach out to support@alltrails.com with any additional feedback.
+                - generic [ref=f1e469]:
+                  - generic [ref=f1e470]:
+                    - generic [ref=f1e471]:
+                      - generic [ref=f1e472]: Aileen Curfman
+                      - button "More review actions" [ref=f1e478] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f1e479]: more_vert
+                    - generic [ref=f1e480]:
+                      - img "Rated 1 stars out of five stars" [ref=f1e481]
+                      - text: 21 July 2025
+                  - generic [ref=f1e512]: I used the plus version daily for years to get accurate mileage for my daily walks. Simultaneously with the introduction of "Peak," my mileages started showing up as a straight line between the start and the farthest point. I tried many fixes including uninstalling and reinstalling. I believe the only effective "fix" will be to upgrade to Peak. Nope. I'm deleting my payment information and will move on to an app that doesn't try to extort money from me.
+                  - generic [ref=f1e513]:
+                    - generic [ref=f1e514]: 424 people found this review helpful
+                    - generic [ref=f1e515]:
+                      - generic [ref=f1e516]: Did you find this helpful?
+                      - generic [ref=f1e518]:
+                        - button "Yes" [ref=f1e519] [cursor=pointer]:
+                          - generic [ref=f1e522]: "Yes"
+                        - button "No" [ref=f1e523] [cursor=pointer]:
+                          - generic [ref=f1e526]: "No"
+                - button "See all reviews" [ref=f1e530]
+          - generic [ref=f1e535]:
+            - heading "What's new" [level=2] [ref=f1e539]
+            - generic [ref=f1e540]: Thanks for using AllTrails! This update includes:• Minor bug fixes
+        - link "Flag as inappropriate (opens in new window)" [ref=f1e545] [cursor=pointer]:
+          - /url: https://support.google.com/googleplay/?p=report_content
+          - generic [aria-hidden] [ref=f1e546]: flag
+          - text: Flag as inappropriate
+      - generic [ref=f1e547]:
+        - generic [ref=f1e548]:
+          - img "Content rating" [ref=f1e549]
+          - generic [ref=f1e550]:
+            - generic [ref=f1e551]: Rated for 3+
+            - generic [ref=f1e552]: Shares location, In-app purchases
+            - link "Learn more about content ratings (opens in new window)" [ref=f1e553] [cursor=pointer]:
+              - /url: https://support.google.com/googleplay?p=appgame_ratings&hl=en-IN
+              - text: Learn more
+        - generic [ref=f1e557]:
+          - heading "App support" [level=2] [ref=f1e559]
+          - button "Expand" [ref=f1e561] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f1e562]: expand_more
+        - generic [ref=f1e564]:
+          - generic [ref=f1e566]:
+            - heading "Similar apps" [level=2] [ref=f1e568]
+            - generic [ref=f1e570] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f1e571]: arrow_forward
+              - link "See more information on Similar apps" [ref=f1e572]:
+                - /url: /store/apps/collection/cluster?gsr=SokBaixsZUNEbmhtOG1WdHlCQ3VzY3ZnMUdyRmRuNlZwZ0dBdDVSNGpQdEFBaG9JPcICVQobChdjb20uYWxsdHJhaWxzLmFsbHRyYWlscxAHGAgwATgASioIARAAGhxBbGxUcmFpbHM6IEhpa2UsIEN5Y2xlICYgUnVuIAAoADAAOABQAFgBYACwEgA%3D:S:ANO1ljKPBF9avRKy68w6X2LkZIVKsSErjw
+          - generic [ref=f1e574]:
+            - 'link "Easy Area: Land Area Measure Marothia Techs Rated 4.3 stars out of five stars" [ref=f1e576] [cursor=pointer]':
+              - /url: /store/apps/details?id=easyarea.landcalculator.measuremap.gpsfieldgeo
+              - generic [ref=f1e579]:
+                - generic [ref=f1e580]: "Easy Area: Land Area Measure"
+                - generic [ref=f1e582]: Marothia Techs
+                - img "Rated 4.3 stars out of five stars" [ref=f1e585]:
+                  - generic [ref=f1e586]: "4.3"
+                  - generic [aria-hidden] [ref=f1e588]: star
+            - link "Sky Tonight - Star Gazing App Vito Technology Rated 4.6 stars out of five stars" [ref=f1e590] [cursor=pointer]:
+              - /url: /store/apps/details?id=com.vitotechnology.sky.tonight.map.star.walk
+              - generic [ref=f1e593]:
+                - generic [ref=f1e594]: Sky Tonight - Star Gazing App
+                - generic [ref=f1e596]: Vito Technology
+                - img "Rated 4.6 stars out of five stars" [ref=f1e599]:
+                  - generic [ref=f1e600]: "4.6"
+                  - generic [aria-hidden] [ref=f1e602]: star
+            - link "My Location - Track GPS & Maps Andev Rated 4.2 stars out of five stars" [ref=f1e604] [cursor=pointer]:
+              - /url: /store/apps/details?id=com.location.test
+              - generic [ref=f1e607]:
+                - generic [ref=f1e608]: My Location - Track GPS & Maps
+                - generic [ref=f1e610]: Andev
+                - img "Rated 4.2 stars out of five stars" [ref=f1e613]:
+                  - generic [ref=f1e614]: "4.2"
+                  - generic [aria-hidden] [ref=f1e616]: star
+            - 'link "HiiKER: The Hiking Maps App Waymarked Trails LTD Rated 4.0 stars out of five stars" [ref=f1e618] [cursor=pointer]':
+              - /url: /store/apps/details?id=com.waymarkedtrails.hiiker
+              - generic [ref=f1e621]:
+                - generic [ref=f1e622]: "HiiKER: The Hiking Maps App"
+                - generic [ref=f1e624]: Waymarked Trails LTD
+                - img "Rated 4.0 stars out of five stars" [ref=f1e627]:
+                  - generic [ref=f1e628]: "4.0"
+                  - generic [aria-hidden] [ref=f1e630]: star
+            - link "Digital Compass Axiomatic Inc. Rated 4.6 stars out of five stars" [ref=f1e632] [cursor=pointer]:
+              - /url: /store/apps/details?id=com.vincentlee.compass
+              - generic [ref=f1e635]:
+                - generic [ref=f1e636]: Digital Compass
+                - generic [ref=f1e638]: Axiomatic Inc.
+                - img "Rated 4.6 stars out of five stars" [ref=f1e641]:
+                  - generic [ref=f1e642]: "4.6"
+                  - generic [aria-hidden] [ref=f1e644]: star
+            - link "Frequency Sound Generator LuxDeLux Rated 4.6 stars out of five stars" [ref=f1e646] [cursor=pointer]:
+              - /url: /store/apps/details?id=com.luxdelux.frequencygenerator
+              - generic [ref=f1e649]:
+                - generic [ref=f1e650]: Frequency Sound Generator
+                - generic [ref=f1e652]: LuxDeLux
+                - img "Rated 4.6 stars out of five stars" [ref=f1e655]:
+                  - generic [ref=f1e656]: "4.6"
+                  - generic [aria-hidden] [ref=f1e658]: star
+  - contentinfo [ref=f1e660]:
+    - generic [ref=f1e662]:
+      - generic [ref=f1e664]:
+        - text: Google Play
+        - link [ref=f1e666] [cursor=pointer]:
+          - /url: /store/pass/getstarted
+          - paragraph [ref=f1e667]: Play Pass
+        - link [ref=f1e669] [cursor=pointer]:
+          - /url: /store/points/enroll
+          - paragraph [ref=f1e670]: Play Points
+        - link [ref=f1e672] [cursor=pointer]:
+          - /url: https://play.google.com/about/giftcards
+          - paragraph [ref=f1e673]: Gift cards
+        - link [ref=f1e675] [cursor=pointer]:
+          - /url: /store/shop
+          - paragraph [ref=f1e676]: Shop devices
+        - link [ref=f1e678] [cursor=pointer]:
+          - /url: /redeem
+          - paragraph [ref=f1e679]: Redeem
+        - link [ref=f1e681] [cursor=pointer]:
+          - /url: https://support.google.com/googleplay/answer/134336
+          - paragraph [ref=f1e682]: Refund policy
+      - generic [ref=f1e684]:
+        - text: Kids & family
+        - link [ref=f1e686] [cursor=pointer]:
+          - /url: https://support.google.com/googleplay?p=pff_parentguide
+          - paragraph [ref=f1e687]: Parent Guide
+        - link [ref=f1e689] [cursor=pointer]:
+          - /url: https://support.google.com/googleplay/answer/7007852
+          - paragraph [ref=f1e690]: Family sharing
+    - generic [ref=f1e691]:
+      - link [ref=f1e693] [cursor=pointer]:
+        - /url: https://play.google.com/intl/en-US_in/about/play-terms.html
+        - paragraph [ref=f1e694]: Terms of Service
+      - link [ref=f1e696] [cursor=pointer]:
+        - /url: https://policies.google.com/privacy
+        - paragraph [ref=f1e697]: Privacy
+      - link [ref=f1e699] [cursor=pointer]:
+        - /url: https://support.google.com/googleplay/?p=about_play
+        - paragraph [ref=f1e700]: About Google Play
+      - link [ref=f1e702] [cursor=pointer]:
+        - /url: http://developer.android.com/index.html
+        - paragraph [ref=f1e703]: Developers
+      - link [ref=f1e705] [cursor=pointer]:
+        - /url: https://store.google.com/?playredirect=true&utm_source=play&utm_medium=google_oo&utm_campaign=GS106288
+        - paragraph [ref=f1e706]: Google Store
+      - generic [ref=f1e707]: All prices include GST.
+      - generic [ref=f1e708]: India (English (United States))
